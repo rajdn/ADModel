@@ -22,3 +22,15 @@ Completeness
 ----------------
 
 This is still very much a work in progress, it is functional, but not polished and still missing some basic features, like building requests for PUT and DELETE.
+
+Dependancies
+----------------
+
+This project uses these two projects (kind of one project) for parsing, if you don't need one or the other, it's not to hard to take out one or both. JSON doesn't have any dependancies, XML does link against libxml2.
+
+TouchJSON
+http://github.com/schwa/TouchJSON
+
+TouchXML
+http://github.com/schwa/TouchXML
+(Project must have Other Linker Flag -lxml2 and Header Search Path /usr/include/libxml2)
