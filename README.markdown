@@ -1,7 +1,7 @@
 ADModel
 =======
 
-ADModel is my attempt to create an easy to use interface for managing batches of asynchronous network connections and offer simple parsing for JSON and xml.
+ADModel is my attempt to create an easy to use interface for managing batches of asynchronous network connections and offer simple parsing for JSON and XML.
 
 Asynchronous Networking
 ------------
@@ -18,3 +18,7 @@ Usage
 
 Reference the sample calls in the ADModel project to see how it can be used.
 
+Completeness
+----------------
+
+This is still very much a work in progress, it is functional, but not polished and still missing some basic features, like building requests for PUT and DELETE.
