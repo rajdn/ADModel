@@ -154,7 +154,7 @@
 			[[self.queue parseQueue] addOperationWithBlock:^(void) {
 				NSError			*	error;
 				NSDictionary	*	result	=
-				[[CJSONDeserializer deserializer] deserializeAsDictionary:data error:&error];
+				[[CJSONDeserializer deserializer] deserializeAsArray:data error:&error];
 				[self networkOperationDidComplete:self withResult:result];
 			}];
 			break;
