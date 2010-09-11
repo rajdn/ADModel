@@ -1,0 +1,3 @@
+This is just a file to demonstrate multipart form upload.
+
+The image.jpg in this project is from http://www.flickr.com/photos/reinante/3744272498/sizes/o/in/photostream/

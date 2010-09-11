@@ -1,0 +1,35 @@
+//
+//  HandleXMLFeed.h
+//
+//  Copyright 2009 Doug Russell
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//  
+//  http://www.apache.org/licenses/LICENSE-2.0
+//  
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface HandleXMLFeed : NSObject 
+{
+	NSData				*	_data;
+	NSString			*	_xpath;
+	NSMutableArray		*	feedEntries;
+}
+
+@property (nonatomic, retain)	NSData				*	data;
+@property (nonatomic, retain)	NSString			*	xpath;
+@property (nonatomic, retain)	NSMutableArray		*	feedEntries;
+
+- (id)initWithData:(NSData *)data xPath:(NSString *)xPath;
+- (NSArray *)parse;
+
+@end
