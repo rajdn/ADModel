@@ -28,6 +28,7 @@ typedef enum {
 	kTimeoutCode,
 	kBadURLCode,
 	kForbiddenURLCode,
+	kUnavailableURLCode,
 } OperationCodes;
 
 #import "RootViewController.h"
@@ -44,6 +45,7 @@ typedef enum {
 - (void)timeout;
 - (void)badURL;
 - (void)forbiddenURL;
+- (void)unavailableURL;
 @end
 
 @implementation RootViewController
@@ -70,6 +72,7 @@ typedef enum {
 //	[self timeout];
 //	[self badURL];
 //	[self forbiddenURL];
+	[self unavailableURL];
 }
 - (void)viewDidUnload 
 {
@@ -245,6 +248,20 @@ typedef enum {
 	op.delegate					=	self;
 	op.instanceCode				=	kForbiddenURLCode;
 	op.URI						=	@"/ESModelAPI/Forbidden/";
+	op.parseType				=	NoParse;
+	op.connectionID				=	[self generateConnectionID];
+	[operationQueue addOperation:op];
+	[op release];
+}
+- (void)unavailableURL
+{
+	//	
+	//	Call a URL that returns a 403
+	//	
+	NetworkOperation	*	op	=	[[NetworkOperation alloc] init];
+	op.delegate					=	self;
+	op.instanceCode				=	kUnavailableURLCode;
+	op.URI						=	@"/ESModelAPI/Unavailable/";
 	op.parseType				=	NoParse;
 	op.connectionID				=	[self generateConnectionID];
 	[operationQueue addOperation:op];
