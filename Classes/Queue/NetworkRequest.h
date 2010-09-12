@@ -24,8 +24,8 @@ typedef enum {
 	GET,
 	POST,
 	MULTI, //Multipart Form Post
-	PUT,
-	DELETE,
+//	PUT,
+//	DELETE,
 } NetworkRequestType;
 
 @interface NetworkRequest : NSObject 

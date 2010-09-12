@@ -18,10 +18,144 @@ Usage
 
 Reference the sample calls in the ADModel project to see how it can be used.
 
+##NetworkOperationQueue Class Reference : 
+>###Overview - 
+>>Declared in NetworkOperationQueue.h
+>
+>###Properties - 
+>####NSUInteger	maxConcurrentOperationCount
+>>Maximum number of connections to dispatch at once
+>>@property (nonatomic, assign)	NSUInteger	maxConcurrentOperationCount;
+>
+>####BOOL	suspended
+>>Suspend any new connections being dispatched
+>>Currently executing operations will be allowed to complete
+>>@property (nonatomic, getter=isSuspended)	BOOL	suspended;
+>
+>###Tasks - 
+>
+>####Inspect Queue:
+>>-(NSArray *)operations;
+>>-(NSUInteger)operationsCount;
+>
+>####Add operations to queue:
+>>-(void)addOperation:(NetworkOperation *)op;
+>>-(void)addOperations:(NSArray *)ops;
+>
+>####Cancel:
+>>-(void)cancelAllOperations;
+>
+>###Class Methods - 
+>
+>###Instance Methods - 
+>
+>####- (NSArray *)operations;
+>>Operations currently in the queue.
+>
+>####- (NSUInteger)operationsCount;
+>>Count of operations currently in queue
+>
+>####- (void)addOperation:(NetworkOperation *)op;
+>>Add operation to queue and trigger queue to process it
+>
+>####- (void)addOperations:(NSArray *)ops;
+>>Add several operations to queue and trigger queue to process them
+>>Queue execution order is not based on array index
+>
+>####- (void)cancelAllOperations;
+>>Cancel all operations currently in queue. Network connections in
+>>progress will be canceled, parsing in process will not return data,
+>>but may not immediately cease working.
+>
+>###Constants - 
+
+
+
+##NetworkOperationQueueDelegate Protocol Reference : 
+>###Overview - 
+>>Declared in NetworkOperationDelegate.h
+>
+>###Tasks - 
+>####Queue Management:
+>>-(void)removeNetworkOperation:(NetworkOperation *)operation;
+>>-(NSOperationQueue *)parseQueue;
+>
+>###Instance Methods - 
+>
+>####- (void)removeNetworkOperation:(NetworkOperation *)operation;
+>>Dequeue completed, cancelled or failed operation
+>
+>####- (NSOperationQueue *)parseQueue;
+>>Queue for parsing XML and JSON
+
+
+
+##NetworkOperation Class Reference : 
+>###Overview - 
+>>Declared in NetworkOperation.h
+>
+>###Tasks - 
+>
+>###Class Methods - 
+>
+>###Instance Methods - 
+>
+>###Constants - 
+
+
+
+##NetworkOperationDelegate Protocol Reference : 
+>###Overview - 
+>>Declared in NetworkOperationDelegate.h
+>
+>###Tasks - 
+>
+>###Instance Methods - 
+>
+
+
+
+##NetworkRequest Class Reference : 
+>###Overview - 
+>>Declared in NetworkRequest.h
+>
+>###Tasks - 
+>
+>###Class Methods - 
+>
+>###Instance Methods - 
+>
+>###Constants - 
+
+
+
+##NetworkRequestDelegate Protocol Reference : 
+>###Overview - 
+>>Declared in NetworkRequestDelegate.h
+>
+>###Tasks - 
+>
+>###Instance Methods - 
+>
+
+##HandleXMLFeed : 
+>###Overview - 
+>>Declared in HandleXMLFeed.h
+>
+>###Tasks - 
+>
+>###Class Methods - 
+>
+>###Instance Methods - 
+>
+>###Constants - 
+
+
+
 Completeness
 ----------------
 
-This is still very much a work in progress, it is functional, but not polished and still missing some basic features, like building requests for PUT and DELETE.
+This is still very much a work in progress, it is functional, but not polished and still missing some features I'd like it to have, like better PUT/DELETE support and HTTP Authentication.
 
 Dependancies
 ----------------

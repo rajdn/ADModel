@@ -29,7 +29,9 @@
 @end
 
 @protocol NetworkOperationQueueDelegate
+//	Dequeue completed, cancelled or failed operation
 - (void)removeNetworkOperation:(NetworkOperation *)operation;
+//	Queue for parsing XML and JSON
 - (NSOperationQueue *)parseQueue;
 @optional
 

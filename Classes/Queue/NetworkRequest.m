@@ -148,9 +148,9 @@
 							cachePolicy:NSURLRequestUseProtocolCachePolicy
 						timeoutInterval:15.0];
 	switch (requestType) {
-		case GET:
-			// Nothing to do here
-			break;
+		//case GET:
+		//	// Nothing to do here
+		//	break;
 		case POST:
 			[aRequest setHTTPMethod:@"POST"];
 			[aRequest setHTTPBody:[self formBody]];
@@ -162,12 +162,12 @@
 			[aRequest addValue:contentType forHTTPHeaderField: @"Content-Type"];
 			[aRequest setHTTPBody:[self multipartFormBodyWithStringBoundary:stringBoundary]];
 			break;
-		case PUT:
-			
-			break;
-		case DELETE:
-			
-			break;
+		//case PUT:
+		//	// Not yet implemented
+		//	break;
+		//case DELETE:
+		//	// Not yet implemented
+		//	break;
 		default:
 			break;
 	}

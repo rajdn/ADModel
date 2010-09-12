@@ -48,17 +48,26 @@
 @property (nonatomic, getter=isSuspended)	BOOL	suspended;
 
 //	
-//	/*UNREVISEDCOMMENTS*/
+//	Operations currently in the queue.
 //	
 - (NSArray *)operations;
+//	
+//	Count of operations currently in queue
+//	
 - (NSUInteger)operationsCount;
 //	
-//	/*UNREVISEDCOMMENTS*/
+//	Add operation to queue and trigger queue to process it
 //	
 - (void)addOperation:(NetworkOperation *)op;
+//	
+//	Add several operations to queue and trigger queue to process them
+//	Queue execution order is not based on array index
+//	
 - (void)addOperations:(NSArray *)ops;
 //	
-//	Cancel all connections and/or parsing
+//	Cancel all operations currently in queue. Network connections in
+//	progress will be canceled, parsing in process will not return data,
+//	but may not immediately cease working.
 //	
 - (void)cancelAllOperations;
 
