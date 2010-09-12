@@ -285,7 +285,7 @@ didReceiveResponse:(NSURLResponse *)response
 					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorNoPermissionsToReadFile userInfo:nil];
 					break;
 				case 404:
-					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorFileDoesNotExist userInfo:nil];
+					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorResourceUnavailable userInfo:nil];
 					break;
 				case 500:
 					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadServerResponse userInfo:nil];
@@ -293,7 +293,7 @@ didReceiveResponse:(NSURLResponse *)response
 				case 503:	// Should check for Retry-After header and schedule 
 							// [self performSelector:@selector(start) withObject:nil afterDelay:retryAfter];
 							// with some kind of retry limit
-					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadServerResponse userInfo:nil];
+					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorCannotConnectToHost userInfo:nil];
 					break;
 				default:
 					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorUnknown userInfo:nil];
