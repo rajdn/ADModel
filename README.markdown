@@ -94,13 +94,59 @@ Reference the sample calls in the ADModel project to see how it can be used.
 >###Overview - 
 >>Declared in NetworkOperation.h
 >
+>###Properties - 
+>####id&lt;NetworkOperationDelegate, NSObject> delegate
+>>@property (nonatomic, assign)	id&lt;NetworkOperationDelegate, NSObject&gt; delegate;
+>####id&lt;NetworkOperationQueueDelegate, NSObject&gt; queue;
+>>@property (nonatomic, assign)	id&lt;NetworkOperationQueueDelegate, NSObject&gt; queue;
+>####NSString	*	baseURL;
+>>@property (nonatomic, retain)	NSString	*	baseURL;
+>####NSString		*	URI;
+>>@property (nonatomic, retain)	NSString		*	URI;
+>####BOOL	cancelled;
+>>@property (nonatomic, getter=isCancelled)	BOOL	cancelled;
+>####BOOL	executing;
+>>@property (nonatomic, getter=isExecuting)	BOOL	executing;
+>####NSInteger	instanceCode;
+>>@property (nonatomic, assign)	NSInteger	instanceCode;
+>####NSString	*	connectionID;
+>>@property (nonatomic, retain)	NSString	*	connectionID;
+>####NSDictionary	*	headerDict;
+>>@property (nonatomic, retain)	NSDictionary	*	headerDict;
+>####NSDictionary	*	bodyBufferDict;
+>>@property (nonatomic, retain)	NSDictionary	*	bodyBufferDict;
+>####NSArray	*	bodyDataArray;
+>>@property (nonatomic, retain)	NSArray	*	bodyDataArray;
+>####NSDictionary	*	userInfo;
+>>@property (nonatomic, retain)	NSDictionary	*	userInfo;
+>####NSString	*	xPath;
+>>@property (nonatomic, retain)	NSString		*	xPath;
+>####NetworkOperationParseType	parseType;
+>>@property (nonatomic, assign)	NetworkOperationParseType	parseType;
+>####NetworkRequestType	requestType;
+>>@property (nonatomic, assign)	NetworkRequestType	requestType;
+>
 >###Tasks - 
+>####Operation Management:
+>>-(void)start;
+>>-(void)cancel;
 >
 >###Class Methods - 
 >
 >###Instance Methods - 
+>####- (void)start;
+>>Called by queue to start operation. Do not call directly.
+>####- (void)cancel;
+>>Called by queue after cancelAllOperations call or can be called directly
 >
 >###Constants - 
+>####NetworkOperationParseType - 
+>>typedef enum {
+>>	NoParse,
+>>	ParseXML,
+>>	ParseJSONDictionary,
+>>	ParseJSONArray,
+>>} NetworkOperationParseType;
 
 
 
@@ -138,7 +184,9 @@ Reference the sample calls in the ADModel project to see how it can be used.
 >###Instance Methods - 
 >
 
-##HandleXMLFeed : 
+
+
+##HandleXMLFeed Class Reference : 
 >###Overview - 
 >>Declared in HandleXMLFeed.h
 >

@@ -31,7 +31,7 @@
 @synthesize	connectionID;
 @synthesize	url;
 @synthesize	cancelled;
-@synthesize	bufferDict, dataArray, userInfo;
+@synthesize	headerDict, bodyBufferDict, bodyDataArray, userInfo;
 @synthesize	requestType;
 @synthesize	request	=	_request, response	=	_response;
 
@@ -47,17 +47,18 @@
 		//	
 		//	Put everything into a known state
 		//	
-		url			=	nil;
-		connectionID=	nil;
-		cancelled	=	NO;
-		bufferDict	=	nil;
-		dataArray	=	nil;
-		userInfo	=	nil;
-		requestType	=	GET;
-		_request	=	nil;
-		_response	=	nil;
-		_connection	=	nil;
-		_data		=	nil;
+		url				=	nil;
+		connectionID	=	nil;
+		cancelled		=	NO;
+		headerDict		=	nil;
+		bodyBufferDict	=	nil;
+		bodyDataArray	=	nil;
+		userInfo		=	nil;
+		requestType		=	GET;
+		_request		=	nil;
+		_response		=	nil;
+		_connection		=	nil;
+		_data			=	nil;
 	}
 	return self;
 }
@@ -65,8 +66,9 @@
 {
 	[url release];
 	[connectionID release];
-	[bufferDict release];
-	[dataArray release];
+	[headerDict release];
+	[bodyBufferDict release];
+	[bodyDataArray release];
 	[userInfo release];
 	[_request release];
 	[_response release];
@@ -147,6 +149,8 @@
 	[NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url]
 							cachePolicy:NSURLRequestUseProtocolCachePolicy
 						timeoutInterval:15.0];
+	if (headerDict != nil)
+		[aRequest setAllHTTPHeaderFields:headerDict];
 	switch (requestType) {
 		//case GET:
 		//	// Nothing to do here
@@ -162,9 +166,11 @@
 			[aRequest addValue:contentType forHTTPHeaderField: @"Content-Type"];
 			[aRequest setHTTPBody:[self multipartFormBodyWithStringBoundary:stringBoundary]];
 			break;
-		//case PUT:
-		//	// Not yet implemented
-		//	break;
+		case PUT:
+			[aRequest setHTTPMethod:@"PUT"];
+			if (bodyDataArray && bodyDataArray.count == 1)
+				[aRequest setHTTPBody:[bodyDataArray objectAtIndex:0]];
+			break;
 		//case DELETE:
 		//	// Not yet implemented
 		//	break;
@@ -179,13 +185,13 @@
 	if (cancelled)
 		return nil;
 	NSMutableString	*	buffer		=	[NSMutableString string];
-	NSArray			*	keys		=	[bufferDict allKeys];
+	NSArray			*	keys		=	[bodyBufferDict allKeys];
 	NSString		*	value		=	nil;
 	for (NSString *key in keys) 
 	{
 		if (!cancelled)
 		{
-			value					=	[self urlEncodeString:[bufferDict objectForKey:key]];
+			value					=	[self urlEncodeString:[bodyBufferDict objectForKey:key]];
 			value					=	[NSString stringWithFormat:@"&%@=%@", key, value];
 			if (value)
 				[buffer appendString:value];
@@ -217,13 +223,13 @@
 - (NSData *)multipartFormBodyWithStringBoundary:(NSString *)stringBoundary
 {	
 	NSMutableData	*	postBody	=	[NSMutableData data];
-	NSArray			*	keys		=	[bufferDict allKeys];
+	NSArray			*	keys		=	[bodyBufferDict allKeys];
 	NSString		*	value		=	nil;
 	for (NSString *key in keys) 
 	{
 		if (!cancelled)
 		{
-			value					=	[bufferDict objectForKey:key];
+			value					=	[bodyBufferDict objectForKey:key];
 			if (value)
 			{
 				[postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -236,7 +242,7 @@
 		else
 			break;
 	}
-	for (NSDictionary *dataDict in dataArray)
+	for (NSDictionary *dataDict in bodyDataArray)
 	{
 		NSString	*	fieldName	=	[dataDict objectForKey:@"fieldName"];
 		NSString	*	fileName	=	[dataDict objectForKey:@"fileName"];

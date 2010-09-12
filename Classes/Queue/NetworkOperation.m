@@ -33,10 +33,11 @@
 @synthesize	baseURL, URI;
 @synthesize	cancelled, executing;
 @synthesize	instanceCode, connectionID;
-@synthesize	bufferDict, dataArray, userInfo;
+@synthesize	headerDict, bodyBufferDict, bodyDataArray, userInfo;
 @dynamic	xPath;
 @synthesize	parseType;
 @synthesize	requestType;
+@dynamic	response;
 
 /******************************************************************************/
 #pragma mark -
@@ -47,19 +48,20 @@
 {
 	if ((self = [super init]))
 	{
-		baseURL		=	kBaseURL;
-		URI			=	nil;
-		cancelled	=	NO;
-		executing	=	NO;
-		instanceCode=	0;
-		connectionID=	nil;
-		bufferDict	=	nil;
-		dataArray	=	nil;
-		userInfo	=	nil;
-		xPath		=	nil;
-		parseType	=	NoParse;
-		requestType	=	GET;
-		_request	=	nil;
+		baseURL			=	kBaseURL;
+		URI				=	nil;
+		cancelled		=	NO;
+		executing		=	NO;
+		instanceCode	=	0;
+		connectionID	=	nil;
+		headerDict		=	nil;
+		bodyBufferDict	=	nil;
+		bodyDataArray	=	nil;
+		userInfo		=	nil;
+		xPath			=	nil;
+		parseType		=	NoParse;
+		requestType		=	GET;
+		_request		=	nil;
 	}
 	return self;
 }
@@ -71,8 +73,9 @@
 	[URI release];
 	[request release];
 	[connectionID release];
-	[bufferDict release];
-	[dataArray release];
+	[headerDict release];
+	[bodyBufferDict release];
+	[bodyDataArray release];
 	[userInfo release];
 	[xPath release];
 	[_request release];
@@ -87,6 +90,10 @@
 	[xPath release]; xPath = nil;
 	if (anXPath != nil)
 		xPath	=	[[NSString alloc] initWithFormat:@"//%@", anXPath];
+}
+- (NSURLResponse *)response
+{
+	return _request.response;
 }
 /******************************************************************************/
 #pragma mark -
@@ -106,8 +113,8 @@
 		else
 			_request.url		=	baseURL;
 		_request.requestType	=	requestType;
-		_request.bufferDict		=	bufferDict;
-		_request.dataArray		=	dataArray;
+		_request.bodyBufferDict	=	bodyBufferDict;
+		_request.bodyDataArray	=	bodyDataArray;
 		_request.userInfo		=	userInfo;
 	}
 	_request.connectionID	=	connectionID;

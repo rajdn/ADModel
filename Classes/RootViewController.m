@@ -30,6 +30,7 @@ typedef enum {
 	kForbiddenURLCode,
 	kBadServerURLCode,
 	kUnavailableURLCode,
+	kPutCreateURL,
 } OperationCodes;
 
 #import "RootViewController.h"
@@ -48,6 +49,8 @@ typedef enum {
 - (void)forbiddenURL;
 - (void)badServerURL;
 - (void)unavailableURL;
+- (void)putCreateURL;
+- (void)putNoContentURL;
 - (NSString *)logNSURLError:(int)errorCode;
 @end
 
@@ -67,8 +70,8 @@ typedef enum {
 	//	Uncomment one or several of the sample calls to test run operations
 	//	
 	[self podcastFeed];
-	[self twitterSearchFeed];
-	[self twitterUserFeed];
+//	[self twitterSearchFeed];
+//	[self twitterUserFeed];
 	[self postPrint];
 	[self postFilePrint];
 	[self postMultiFilePrint];
@@ -77,6 +80,8 @@ typedef enum {
 	[self forbiddenURL];
 	[self badServerURL];
 	[self unavailableURL];
+	[self putCreateURL];
+	[self putNoContentURL];
 }
 - (void)viewDidUnload 
 {
@@ -149,12 +154,12 @@ typedef enum {
 	op.xPath					=	@"root";
 	op.instanceCode				=	kPostPrintCode;
 	op.URI						=	@"/ESModelAPI/Post/Form/";
-	op.bufferDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
-									 @"keyOne", @"valueOne",
-									 @"keyTwo", @"valueTwo", nil];
+	op.bodyBufferDict			=	[NSDictionary dictionaryWithObjectsAndKeys:
+									 @"valueOne", @"keyOne",
+									 @"valueTwo", @"keyTwo", nil];
 	op.connectionID				=	[self generateConnectionID];
 	[operationQueue addOperation:op];
-	[op release];	
+	[op release];
 }
 - (void)postFilePrint
 {
@@ -168,11 +173,11 @@ typedef enum {
 	op.xPath					=	@"root";
 	op.instanceCode				=	kPostFilePrintCode;
 	op.URI						=	@"/ESModelAPI/Post/Multipart/";
-	op.bufferDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
+	op.bodyBufferDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
 									 @"valueOne", @"keyOne",
 									 @"valueTwo", @"keyTwo", nil];
 	NSData			*	data	=	[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"File" ofType:@"txt"]];
-	op.dataArray				=	[NSArray arrayWithObjects:
+	op.bodyDataArray			=	[NSArray arrayWithObjects:
 									 [NSDictionary dictionaryWithObjectsAndKeys:
 									  @"uploadedfile", @"fieldName",
 									  @"file.txt", @"fileName",
@@ -194,12 +199,12 @@ typedef enum {
 	op.xPath					=	@"root";
 	op.instanceCode				=	6;
 	op.URI						=	@"/ESModelAPI/Post/Multipart/";
-	op.bufferDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
+	op.bodyBufferDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
 									 @"valueOne", @"keyOne",
 									 @"valueTwo", @"keyTwo", nil];
 	NSData			*	txtdata	=	[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"File" ofType:@"txt"]];
 	NSData			*	imgdata	=	[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Image" ofType:@"jpg"]];
-	op.dataArray				=	[NSArray arrayWithObjects:
+	op.bodyDataArray			=	[NSArray arrayWithObjects:
 									 [NSDictionary dictionaryWithObjectsAndKeys:
 									  @"uploadedtxtfile", @"fieldName",
 									  @"file.txt", @"fileName",
@@ -251,7 +256,7 @@ typedef enum {
 	NetworkOperation	*	op	=	[[NetworkOperation alloc] init];
 	op.delegate					=	self;
 	op.instanceCode				=	kBadURLCode;
-	op.URI						=	@"/bwrgilurfsljkdng/";//@"/ESModelAPI/DoesntExist/";
+	op.URI						=	@"/ESModelAPI/DoesntExist/";
 	op.parseType				=	NoParse;
 	op.connectionID				=	[self performSelector:@selector(generateConnectionID)];
 	[operationQueue addOperation:op];
@@ -285,6 +290,44 @@ typedef enum {
 	[operationQueue addOperation:op];
 	[op release];
 }
+- (void)putCreateURL
+{
+	//	
+	//	*UNREVISEDCOMMENTS*
+	//	
+	NetworkOperation	*	op	=	[[NetworkOperation alloc] init];
+	op.delegate					=	self;
+	op.requestType				=	PUT;
+	op.parseType				=	NoParse;
+	op.instanceCode				=	kPutCreateURL;
+	op.URI						=	@"/ESModelAPI/Put/Created/index.php";
+	op.headerDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
+									 @"Header_Value_One", @"Header_Field_One",
+									 @"Header_Value_Two", @"Header_Field_Two", nil];
+	op.bodyDataArray				=	[NSArray arrayWithObject:[@"Put Test String Encoded As Data\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	op.connectionID				=	[self generateConnectionID];
+	[operationQueue addOperation:op];
+	[op release];
+}
+- (void)putNoContentURL
+{
+	//	
+	//	*UNREVISEDCOMMENTS*
+	//	
+	NetworkOperation	*	op	=	[[NetworkOperation alloc] init];
+	op.delegate					=	self;
+	op.requestType				=	PUT;
+	op.parseType				=	NoParse;
+	op.instanceCode				=	kPutCreateURL;
+	op.URI						=	@"/ESModelAPI/Put/NoContent/index.php";
+	op.headerDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
+									 @"Header_Value_One", @"Header_Field_One",
+									 @"Header_Value_Two", @"Header_Field_Two", nil];
+	op.bodyDataArray				=	[NSArray arrayWithObject:[@"Put Test String Encoded As Data\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	op.connectionID				=	[self generateConnectionID];
+	[operationQueue addOperation:op];
+	[op release];
+}
 /******************************************************************************/
 #pragma mark -
 #pragma mark Network Operation Delegate
@@ -297,22 +340,30 @@ typedef enum {
 		value	=	[[[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding] autorelease];
 	else
 		value	=	result;
-	NSLog(@"\n\nOperation Complete for:\nInstance Code: %d\nConnectionID: %@\nURL: %@%@\n\n%@\n\n", 
+	NSInteger	statusCode	=	0;
+	if ([operation.response isKindOfClass:[NSHTTPURLResponse class]])
+		statusCode	=	[(NSHTTPURLResponse *)operation.response statusCode];
+	NSLog(@"\n\nOperation Complete for:\nInstance Code: %d\nConnectionID: %@\nURL: %@%@\nResponse Status Code: %d\n\n%@\n\n", 
 		  operation.instanceCode,
 		  operation.connectionID,
 		  operation.baseURL,
 		  operation.URI,
+		  statusCode,
 		  value);
 	// switch on instance code and or connectionID and forward results to wherever it should go
 }
 - (void)networkOperationDidFail:(NetworkOperation *)operation withError:(NSError *)error
 {
-	NSLog(@"\n\nOperation Failed for:\nInstance Code: %d\nConnectionID: %@\nURL: %@%@\nError: %@\n%@\n\n", 
+	NSInteger	statusCode	=	0;
+	if ([operation.response isKindOfClass:[NSHTTPURLResponse class]])
+		statusCode	=	[(NSHTTPURLResponse *)operation.response statusCode];
+	NSLog(@"\n\nOperation Failed for:\nInstance Code: %d\nConnectionID: %@\nURL: %@%@\nError: %@\nResponse Status Code: %d\n%@\n\n", 
 		  operation.instanceCode,
 		  operation.connectionID,
 		  operation.baseURL,
 		  operation.URI,
 		  error,
+		  statusCode,
 		  [self logNSURLError:error.code]);
 	// Report error
 }

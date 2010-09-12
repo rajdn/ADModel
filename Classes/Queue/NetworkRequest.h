@@ -24,7 +24,7 @@ typedef enum {
 	GET,
 	POST,
 	MULTI, //Multipart Form Post
-//	PUT,
+	PUT,
 //	DELETE,
 } NetworkRequestType;
 
@@ -35,8 +35,9 @@ typedef enum {
 	NSString		*	url;
 	NSString		*	connectionID;
 	BOOL				cancelled;
-	NSDictionary	*	bufferDict;
-	NSArray			*	dataArray;
+	NSDictionary	*	headerDict;
+	NSDictionary	*	bodyBufferDict;
+	NSArray			*	bodyDataArray;
 	NSDictionary	*	userInfo;
 	NetworkRequestType	requestType;
 	NSURLRequest	*	_request;
@@ -50,8 +51,9 @@ typedef enum {
 @property (nonatomic, retain)	NSString		*	url;
 @property (nonatomic, retain)	NSString		*	connectionID;
 @property (nonatomic, getter=isCancelled)	BOOL	cancelled;
-@property (nonatomic, retain)	NSDictionary	*	bufferDict;
-@property (nonatomic, retain)	NSArray			*	dataArray;
+@property (nonatomic, retain)	NSDictionary	*	headerDict;
+@property (nonatomic, retain)	NSDictionary	*	bodyBufferDict;
+@property (nonatomic, retain)	NSArray			*	bodyDataArray;
 @property (nonatomic, retain)	NSDictionary	*	userInfo;
 @property (nonatomic, assign)	NetworkRequestType	requestType;
 @property (nonatomic, retain)	NSURLRequest	*	request;

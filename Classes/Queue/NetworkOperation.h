@@ -59,8 +59,9 @@ typedef enum {
 	//	
 	//	/*UNREVISEDCOMMENTS*/
 	//	
-	NSDictionary	*	bufferDict;
-	NSArray			*	dataArray;
+	NSDictionary	*	headerDict;
+	NSDictionary	*	bodyBufferDict;
+	NSArray			*	bodyDataArray;
 	NSDictionary	*	userInfo;
 	NSString		*	xPath;
 	NetworkOperationParseType	parseType;
@@ -80,13 +81,16 @@ typedef enum {
 @property (nonatomic, getter=isExecuting)	BOOL	executing;
 @property (nonatomic, assign)	NSInteger			instanceCode;
 @property (nonatomic, retain)	NSString		*	connectionID;
-@property (nonatomic, retain)	NSDictionary	*	bufferDict;
-@property (nonatomic, retain)	NSArray			*	dataArray;
+@property (nonatomic, retain)	NSDictionary	*	headerDict;
+@property (nonatomic, retain)	NSDictionary	*	bodyBufferDict;
+@property (nonatomic, retain)	NSArray			*	bodyDataArray;
 @property (nonatomic, retain)	NSDictionary	*	userInfo;
 @property (nonatomic, retain)	NSString		*	xPath;
 @property (nonatomic, assign)	NetworkOperationParseType	parseType;
 @property (nonatomic, assign)	NetworkRequestType			requestType;
+@property (nonatomic, readonly)	NSURLResponse	*	response;
 
 - (void)start;
+- (void)cancel;
 
 @end
