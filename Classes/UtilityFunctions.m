@@ -1,6 +1,5 @@
 //
 //  UtilityFunctions.m
-//  PartyCamera
 //
 //  Created by Doug Russell on 6/18/10.
 //  Copyright 2010 Doug Russell. All rights reserved.

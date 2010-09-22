@@ -17,7 +17,7 @@
 //  limitations under the License.
 //  
 
-#define kBaseURL @"http://app.keithandthegirl.com"
+#define kBaseURL @"http://getitdownonpaper.com"
 
 #import "NetworkOperation.h"
 #import "CJSONDeserializer.h"
