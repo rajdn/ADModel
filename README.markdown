@@ -95,7 +95,7 @@ Reference the sample calls in the ADModel project to see how it can be used.
 >>Declared in NetworkOperation.h
 >
 >###Properties - 
->####id&lt;NetworkOperationDelegate, NSObject> delegate
+>####id&lt;NetworkOperationDelegate, NSObject&gt; delegate
 >>@property (nonatomic, assign)	id&lt;NetworkOperationDelegate, NSObject&gt; delegate;
 >####id&lt;NetworkOperationQueueDelegate, NSObject&gt; queue;
 >>@property (nonatomic, assign)	id&lt;NetworkOperationQueueDelegate, NSObject&gt; queue;
@@ -155,17 +155,51 @@ Reference the sample calls in the ADModel project to see how it can be used.
 >>Declared in NetworkOperationDelegate.h
 >
 >###Tasks - 
+>####Operation Outcome Reporting:
+>>-(void)networkOperationDidComplete:(NetworkOperation *)operation withResult:(id)result;
+>>-(void)networkOperationDidFail:(NetworkOperation *)operation withError:(NSError *)error;
 >
 >###Instance Methods - 
+>####-(void)networkOperationDidComplete:(NetworkOperation *)operation withResult:(id)result;
+>>Operation completed successfully, with given result
 >
-
+>####-(void)networkOperationDidFail:(NetworkOperation *)operation withError:(NSError *)error;
+>>Operation failed with given error, it is also often worth referencing the operation.result property for server response codes
+>
 
 
 ##NetworkRequest Class Reference : 
 >###Overview - 
 >>Declared in NetworkRequest.h
 >
+>###Properties - 
+>####id&lt;NetworkRequestDelegate&gt; delegate
+>>@property (nonatomic, assign)	id&lt;NetworkRequestDelegate&gt; delegate;
+>####NSString		*	url;
+>>@property (nonatomic, retain)	NSString		*	url;
+>####NSString		*	connectionID;
+>>@property (nonatomic, retain)	NSString		*	connectionID;
+>####BOOL	cancelled;
+>>@property (nonatomic, getter=isCancelled)	BOOL	cancelled;
+>####NSDictionary	*	headerDict;
+>>@property (nonatomic, retain)	NSDictionary	*	headerDict;
+>####NSDictionary	*	bodyBufferDict;
+>>@property (nonatomic, retain)	NSDictionary	*	bodyBufferDict;
+>####NSArray			*	bodyDataArray;
+>>@property (nonatomic, retain)	NSArray			*	bodyDataArray;
+>####NSDictionary	*	userInfo;
+>>@property (nonatomic, retain)	NSDictionary	*	userInfo;
+>####NetworkRequestType	requestType;
+>>@property (nonatomic, assign)	NetworkRequestType	requestType;
+>####NSURLRequest	*	request;
+>>@property (nonatomic, retain)	NSURLRequest	*	request;
+>####NSURLResponse	*	response;
+>>@property (nonatomic, readonly)	NSURLResponse	*	response;
+>
 >###Tasks - 
+>####Operation Execution Control:
+>>-(void)start;
+>>-(void)cancel;
 >
 >###Class Methods - 
 >
@@ -203,7 +237,7 @@ Reference the sample calls in the ADModel project to see how it can be used.
 Completeness
 ----------------
 
-This is still very much a work in progress, it is functional, but not polished and still missing some features I'd like it to have, like better PUT/DELETE support and HTTP Authentication.
+This is still  a work in progress, but it is functional and in use in several of my apps.
 
 Dependancies
 ----------------

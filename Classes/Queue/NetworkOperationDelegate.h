@@ -27,7 +27,7 @@
 //	
 - (void)networkOperationDidComplete:(NetworkOperation *)operation withResult:(id)result;
 //	
-//	Operation failed with given error, it is also often worth referenceing the 
+//	Operation failed with given error, it is also often worth referencing the 
 //	operation.result property for server response codes
 //	
 - (void)networkOperationDidFail:(NetworkOperation *)operation withError:(NSError *)error;
