@@ -41,6 +41,7 @@
 		5357B0AA123B0AD400B80617 /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B091123B0AD400B80617 /* NetworkRequest.m */; };
 		5357B18F123B24B800B80617 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5357B18E123B24B800B80617 /* File.txt */; };
 		5357B227123B30C200B80617 /* Image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5357B226123B30C200B80617 /* Image.jpg */; };
+		53F906D812497C04007B028C /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F906D712497C04007B028C /* UtilityFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,8 @@
 		5357B092123B0AD400B80617 /* NetworkRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestDelegate.h; sourceTree = "<group>"; };
 		5357B18E123B24B800B80617 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		5357B226123B30C200B80617 /* Image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Image.jpg; sourceTree = "<group>"; };
+		53F906D612497C04007B028C /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilityFunctions.h; path = Classes/UtilityFunctions.h; sourceTree = "<group>"; };
+		53F906D712497C04007B028C /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilityFunctions.m; path = Classes/UtilityFunctions.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ADModel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ADModel-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +169,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				53F906D612497C04007B028C /* UtilityFunctions.h */,
+				53F906D712497C04007B028C /* UtilityFunctions.m */,
 				28A0AAE50D9B0CCF005BE974 /* ADModel_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -394,6 +399,7 @@
 				5357B0A8123B0AD400B80617 /* NetworkOperation.m in Sources */,
 				5357B0A9123B0AD400B80617 /* NetworkOperationQueue.m in Sources */,
 				5357B0AA123B0AD400B80617 /* NetworkRequest.m in Sources */,
+				53F906D812497C04007B028C /* UtilityFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

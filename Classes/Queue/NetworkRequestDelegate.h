@@ -20,7 +20,7 @@
 #import <Foundation/Foundation.h>
 
 @class NetworkRequest;
-@protocol NetworkRequestDelegate
+@protocol NetworkRequestDelegate <NSObject>
 - (void)networkRequestDone:(NetworkRequest *)request data:(NSData *)data;
 - (void)networkRequestFailed:(NetworkRequest *)request error:(NSError *)error;
 @optional

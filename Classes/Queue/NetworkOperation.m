@@ -17,7 +17,7 @@
 //  limitations under the License.
 //  
 
-#define kBaseURL @"http://getitdownonpaper.com"
+#define kBaseURL @"http://app.keithandthegirl.com"
 
 #import "NetworkOperation.h"
 #import "CJSONDeserializer.h"
@@ -31,8 +31,9 @@
 @implementation NetworkOperation
 @synthesize	delegate, queue;
 @synthesize	baseURL, URI;
-@synthesize	cancelled, executing;
+@synthesize	cancelled, executing, done;
 @synthesize	instanceCode, connectionID;
+@synthesize	request;
 @synthesize	headerDict, bodyBufferDict, bodyDataArray, userInfo;
 @dynamic	xPath;
 @synthesize	parseType;
@@ -69,16 +70,17 @@
 {
 	delegate	=	nil;
 	queue		=	nil;
-	[baseURL release];
-	[URI release];
-	[request release];
-	[connectionID release];
-	[headerDict release];
-	[bodyBufferDict release];
-	[bodyDataArray release];
-	[userInfo release];
-	[xPath release];
-	[_request release];
+	CleanRelease(baseURL);
+	CleanRelease(URI);
+	CleanRelease(request);
+	CleanRelease(connectionID);
+	CleanRelease(headerDict);
+	CleanRelease(bodyBufferDict);
+	CleanRelease(bodyDataArray);
+	CleanRelease(userInfo);
+	CleanRelease(xPath);
+	_request.delegate = nil;
+	CleanRelease(_request);
 	[super dealloc];
 }
 - (NSString *)xPath
@@ -87,7 +89,7 @@
 }
 - (void)setXPath:(NSString *)anXPath
 {
-	[xPath release]; xPath = nil;
+	CleanRelease(xPath);
 	if (anXPath != nil)
 		xPath	=	[[NSString alloc] initWithFormat:@"//%@", anXPath];
 }
@@ -115,16 +117,17 @@
 		_request.requestType	=	requestType;
 		_request.bodyBufferDict	=	bodyBufferDict;
 		_request.bodyDataArray	=	bodyDataArray;
-		_request.userInfo		=	userInfo;
 	}
+	_request.userInfo		=	userInfo;
 	_request.connectionID	=	connectionID;
 	_request.delegate		=	self;
 	[_request start];
 }
 - (void)cancel
 {
-	cancelled	=	YES;
-	[_request cancel];
+	self.cancelled	=	YES;
+	_request.delegate = nil; [_request cancel];
+	self.executing	=	NO;
 	[self.queue removeNetworkOperation:self];
 }
 /******************************************************************************/
@@ -186,9 +189,12 @@
 		return;
 	if ([NSThread isMainThread])
 	{
-		self.executing	=	NO;
+		self.done		=	YES;
+		_request.delegate = nil; CleanRelease(_request);
+		CleanRelease(request);
 		[self.delegate networkOperationDidComplete:operation 
 										withResult:result];
+		self.executing	=	NO;
 		[self.queue removeNetworkOperation:self];
 	}
 	else
@@ -205,9 +211,12 @@
 		return;
 	if ([NSThread isMainThread])
 	{
-		self.executing	=	NO;
+		self.done		=	YES;
+		_request.delegate = nil; CleanRelease(_request);
+		CleanRelease(request);
 		[self.delegate networkOperationDidFail:operation 
 									 withError:error];
+		self.executing	=	NO;
 		[self.queue removeNetworkOperation:self];
 	}
 	else

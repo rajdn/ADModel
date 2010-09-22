@@ -64,16 +64,18 @@
 }
 - (void)dealloc
 {
-	[url release];
-	[connectionID release];
-	[headerDict release];
-	[bodyBufferDict release];
-	[bodyDataArray release];
-	[userInfo release];
-	[_request release];
-	[_response release];
-	[_connection release];
-	[_data release];
+	delegate = nil;
+	[_connection cancel];
+	CleanRelease(_connection);
+	CleanRelease(_request);
+	CleanRelease(_data);
+	CleanRelease(url);
+	CleanRelease(connectionID);
+	CleanRelease(headerDict);
+	CleanRelease(bodyBufferDict);
+	CleanRelease(bodyDataArray);
+	CleanRelease(userInfo);
+	CleanRelease(_response);
 	[super dealloc];
 }
 /******************************************************************************/
@@ -109,7 +111,7 @@
 			_connection							=	[[NSURLConnection alloc] initWithRequest:_request delegate:self];
 			if (_connection == nil)
 			{	// Unable to make connection
-				[_data release]; _data	=	nil;
+				CleanRelease(_data);
 				// Report error to delegate
 				NSError				*	error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorUnknown userInfo:nil];
 				if ([(NSObject *)self.delegate respondsToSelector:@selector(networkRequestFailed:error:)])
@@ -200,6 +202,8 @@
 		else
 			break;
 	}
+	if (buffer.length >0)
+		[buffer deleteCharactersInRange:NSMakeRange(0, 1)];
 	NSData			*	postBody	=	[NSData dataWithBytes:[buffer UTF8String] length:[buffer length]];
 	return postBody;
 }
@@ -269,8 +273,9 @@
 - (void)connection:(NSURLConnection *)connection 
 didReceiveResponse:(NSURLResponse *)response
 {
-	[_response release]; _response = nil;
+	CleanRelease(_response);
 	_response	=	[response copy];
+#if 0
 	if ([[[_request URL] scheme] isEqual:@"http"] ||
 		[[[_request URL] scheme] isEqual:@"https"])
 	{
@@ -282,8 +287,8 @@ didReceiveResponse:(NSURLResponse *)response
 		{
 			// Cleanup connection and data
 			[_connection cancel];
-			[_connection release]; _connection	=	nil;
-			[_data release]; _data				=	nil;
+			CleanRelease(_connection);
+			CleanRelease(_data);
 			// Report error to delegate
 			NSError	*	error;
 			switch (statusCode) {
@@ -305,10 +310,11 @@ didReceiveResponse:(NSURLResponse *)response
 					error	=	[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorUnknown userInfo:nil];
 					break;
 			}
-			if ([(NSObject *)self.delegate respondsToSelector:@selector(networkRequestFailed:error:)])
+			if (self.delegate && [self.delegate respondsToSelector:@selector(networkRequestFailed:error:)])
 				[self.delegate networkRequestFailed:self error:error];
 		}
 	}
+#endif
     [_data setLength:0];
 }
 - (void)connection:(NSURLConnection *)connection 
@@ -331,10 +337,11 @@ didReceiveResponse:(NSURLResponse *)response
   didFailWithError:(NSError *)error
 {
 	// Cleanup connection and data
-    [_connection release]; _connection	=	nil;
-    [_data release]; _data				=	nil;
+	[_connection cancel];
+	CleanRelease(_connection);
+	CleanRelease(_data);
 	// Report error to delegate
-	if ([(NSObject *)self.delegate respondsToSelector:@selector(networkRequestFailed:error:)])
+	if (self.delegate && [self.delegate respondsToSelector:@selector(networkRequestFailed:error:)])
 		[self.delegate networkRequestFailed:self error:error];
 }
 - (void)connection:(NSURLConnection *)connection 
@@ -365,7 +372,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 	//	
 	//	Cleanup Connection
 	//	
-	[_connection release]; _connection	=	nil;
+	CleanRelease(_connection);
 	//	
 	//	
 	//	
@@ -375,7 +382,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 	//NSString	*	textEncoding	=	[_response textEncodingName];
 	if (_data && ((length == [_data length]) || (length == NSURLResponseUnknownLength)))
 	{
-		if ([(NSObject *)self.delegate respondsToSelector:@selector(networkRequestDone:data:)])
+		if (self.delegate && [self.delegate respondsToSelector:@selector(networkRequestDone:data:)])
 			[self.delegate networkRequestDone:self data:_data];
 	}
 	else 
@@ -389,7 +396,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 	//	
 	//	Cleanup data
 	//	
-    [_data release]; _data				=	nil;
+    CleanRelease(_data);
 }
 
 @end

@@ -47,9 +47,9 @@
 }
 - (void)dealloc
 {
-	[_operations release];
+	CleanRelease(_operations);
 	[_parseQueue cancelAllOperations];
-	[_parseQueue release]; _parseQueue = nil;
+	CleanRelease(_parseQueue);
 	[super dealloc];
 }
 /******************************************************************************/
@@ -60,7 +60,8 @@
 - (void)addOperation:(NetworkOperation *)op
 {
 	//	
-	//	/*UNREVISEDCOMMENTS*/
+	//	Assign queue, add operation to operations waiting for execution
+	//	or already executing, check queue for available slots
 	//	
 	[op setQueue:self];
 	[[self _operations] addObject:op];
@@ -69,7 +70,8 @@
 - (void)addOperations:(NSArray *)ops
 {
 	//	
-	//	/*UNREVISEDCOMMENTS*/
+	//	Assign queue, add operation to operations waiting for execution
+	//	or already executing, check queue for available slots
 	//	
 	[ops makeObjectsPerformSelector:@selector(setDelegate:) withObject:self];
 	[[self _operations] addObjectsFromArray:ops];
@@ -83,11 +85,11 @@
 - (void)cancelAllOperations
 {
 	//	
-	//	/*UNREVISEDCOMMENTS*/
+	//	Cancel all network operations
 	//	
 	[[self _operations] makeObjectsPerformSelector:@selector(cancel)];
 	//	
-	//	/*UNREVISEDCOMMENTS*/
+	//	Cancel all parsing operations
 	//	
 	[[self parseQueue] cancelAllOperations];
 }
@@ -132,17 +134,25 @@
 /******************************************************************************/
 - (void)processQueue
 {
+	if (suspended)
+		return;
 	@synchronized(self)
 	{
+		//	
+		//	Find inactive operations
+		//	
 		NSMutableSet	*	inactiveOperations	=	[[NSMutableSet alloc] init];
 		__block NSInteger	activeOperations	=	0;
 		NSArray			*	currentOperations	=	[NSArray arrayWithArray:[self _operations]];
 		[currentOperations enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			if ([(NetworkOperation *)obj isExecuting])
+			if ([(NetworkOperation *)obj isExecuting] && ![(NetworkOperation *)obj isDone])
 				activeOperations += 1;
 			else
 				[inactiveOperations addObject:obj];
 		}];
+		//	
+		//	Start as many operations as there are slots available in the queue
+		//	
 		NSInteger			availableSlots		=	maxConcurrentOperationCount - activeOperations;
 		for (NSInteger i = 0; i < MIN(availableSlots, [inactiveOperations count]); i++)
 		{
@@ -150,10 +160,14 @@
 			[op start];
 			[inactiveOperations removeObject:op];
 		}
+		CleanRelease(inactiveOperations);
 	}
 }
 - (void)removeNetworkOperation:(NetworkOperation *)operation
 {
+	//	
+	//	Remove operation, check queue for available slots
+	//	
 	[[self _operations] removeObject:operation];
 	[self processQueue];
 }

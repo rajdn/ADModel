@@ -69,19 +69,19 @@ typedef enum {
 	//	
 	//	Uncomment one or several of the sample calls to test run operations
 	//	
-	[self podcastFeed];
+//	[self podcastFeed];
 //	[self twitterSearchFeed];
 //	[self twitterUserFeed];
 	[self postPrint];
-	[self postFilePrint];
-	[self postMultiFilePrint];
-	[self timeout];
-	[self missingFile];
-	[self forbiddenURL];
-	[self badServerURL];
-	[self unavailableURL];
-	[self putCreateURL];
-	[self putNoContentURL];
+//	[self postFilePrint];
+//	[self postMultiFilePrint];
+//	[self timeout];
+//	[self missingFile];
+//	[self forbiddenURL];
+//	[self badServerURL];
+//	[self unavailableURL];
+//	[self putCreateURL];
+//	[self putNoContentURL];
 }
 - (void)viewDidUnload 
 {
@@ -384,7 +384,7 @@ typedef enum {
 }
 /******************************************************************************/
 #pragma mark -
-#pragma mark Memory Management
+#pragma mark 
 #pragma mark -
 /******************************************************************************/
 - (NSString *)logNSURLError:(int)errorCode

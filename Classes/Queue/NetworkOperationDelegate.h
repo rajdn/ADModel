@@ -22,16 +22,27 @@
 @class NetworkOperation;
 
 @protocol NetworkOperationDelegate
+//	
+//	Operation completed successfully, with given result
+//	
 - (void)networkOperationDidComplete:(NetworkOperation *)operation withResult:(id)result;
+//	
+//	Operation failed with given error, it is also often worth referenceing the 
+//	operation.result property for server response codes
+//	
 - (void)networkOperationDidFail:(NetworkOperation *)operation withError:(NSError *)error;
 @optional
 
 @end
 
 @protocol NetworkOperationQueueDelegate
+//	
 //	Dequeue completed, cancelled or failed operation
+//	
 - (void)removeNetworkOperation:(NetworkOperation *)operation;
-//	Queue for parsing XML and JSON
+//	
+//	NSOperationQueue for parsing XML and JSON
+//	
 - (NSOperationQueue *)parseQueue;
 @optional
 
