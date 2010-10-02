@@ -49,7 +49,7 @@
 {
 	if ((self = [super init]))
 	{
-		baseURL			=	kBaseURL;
+		self.baseURL	=	kBaseURL;
 		URI				=	nil;
 		cancelled		=	NO;
 		executing		=	NO;
@@ -63,6 +63,7 @@
 		parseType		=	NoParse;
 		requestType		=	GET;
 		_request		=	nil;
+		response		=	nil;
 	}
 	return self;
 }
@@ -81,6 +82,7 @@
 	CleanRelease(xPath);
 	_request.delegate = nil;
 	CleanRelease(_request);
+	CleanRelease(response);
 	[super dealloc];
 }
 - (NSString *)xPath
@@ -95,7 +97,7 @@
 }
 - (NSURLResponse *)response
 {
-	return _request.response;
+	return response;
 }
 /******************************************************************************/
 #pragma mark -
@@ -190,6 +192,8 @@
 	if ([NSThread isMainThread])
 	{
 		self.done		=	YES;
+		CleanRelease(response);
+		response		=	[[_request response] retain];
 		_request.delegate = nil; CleanRelease(_request);
 		CleanRelease(request);
 		[self.delegate networkOperationDidComplete:operation 
@@ -212,6 +216,8 @@
 	if ([NSThread isMainThread])
 	{
 		self.done		=	YES;
+		CleanRelease(response);
+		response		=	[[_request response] retain];
 		_request.delegate = nil; CleanRelease(_request);
 		CleanRelease(request);
 		[self.delegate networkOperationDidFail:operation 

@@ -19,11 +19,53 @@
 //  
 
 #import <UIKit/UIKit.h>
-#import "NetworkOperationQueue.h"
 
-@interface RootViewController : UIViewController <NetworkOperationDelegate>
+@interface RootViewController : UIViewController
 {
-	NetworkOperationQueue	*	operationQueue;
+	UIButton	*	podcastFeedButton;
+	UIButton	*	twitterSearchFeedButton;
+	UIButton	*	twitterUserButton;
+	UIButton	*	postFormButton;
+	UIButton	*	postFileButton;
+	UIButton	*	postMultipleFilesButton;
+	UIButton	*	timeoutButton;
+	UIButton	*	missingFileButton;
+	UIButton	*	forbiddenURLButton;
+	UIButton	*	badServerURLButton;
+	UIButton	*	unavailableURLButton;
+	UIButton	*	putCreateButton;
+	UIButton	*	putNoContentURL;
 }
+
+@property (nonatomic, retain)	IBOutlet	UIButton	*	podcastFeedButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	twitterSearchFeedButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	twitterUserButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	postFormButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	postFileButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	postMultipleFilesButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	timeoutButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	missingFileButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	forbiddenURLButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	badServerURLButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	unavailableURLButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	putCreateButton;
+@property (nonatomic, retain)	IBOutlet	UIButton	*	putNoContentURL;
+
+- (IBAction)podcastFeedButton:(id)sender;
+- (IBAction)twitterSearchFeedButton:(id)sender;
+- (IBAction)twitterUserFeedButton:(id)sender;
+- (IBAction)postFormButton:(id)sender;
+- (IBAction)postFileButton:(id)sender;
+- (IBAction)postMultipleFilesButton:(id)sender;
+- (IBAction)timeoutButton:(id)sender;
+- (IBAction)missingFileButton:(id)sender;
+- (IBAction)forbiddenURLButton:(id)sender;
+- (IBAction)badServerURLButton:(id)sender;
+- (IBAction)unavailableURLButton:(id)sender;
+- (IBAction)putCreateButton:(id)sender;
+- (IBAction)putNoContentURL:(id)sender;
+
+- (void)pushTableViewController:(NSString *)className;
+- (void)pushViewController:(NSString *)className;
 
 @end

@@ -26,7 +26,8 @@
 @end
 
 @implementation NetworkOperationQueue
-@synthesize maxConcurrentOperationCount, suspended;
+@synthesize maxConcurrentOperationCount;
+@dynamic	suspended;
 
 /******************************************************************************/
 #pragma mark -
@@ -73,7 +74,7 @@
 	//	Assign queue, add operation to operations waiting for execution
 	//	or already executing, check queue for available slots
 	//	
-	[ops makeObjectsPerformSelector:@selector(setDelegate:) withObject:self];
+	[ops makeObjectsPerformSelector:@selector(setQueue:) withObject:self];
 	[[self _operations] addObjectsFromArray:ops];
 	[self processQueue];
 }
@@ -132,6 +133,15 @@
 #pragma mark The Business
 #pragma mark -
 /******************************************************************************/
+- (BOOL)suspended
+{
+	return suspended;
+}
+- (void)setSuspended:(BOOL)shouldSuspend
+{
+	suspended	=	shouldSuspend;
+	[self processQueue];
+}
 - (void)processQueue
 {
 	if (suspended)

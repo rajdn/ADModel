@@ -12,9 +12,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28AD73600D9D9599002E5188 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow_iPhone.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
-		28F335F11007B36200424DE2 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootView.xib */; };
+		28F335F11007B36200424DE2 /* RootView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootView_iPhone.xib */; };
 		5357B093123B0AD400B80617 /* HandleXMLFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B05A123B0AD400B80617 /* HandleXMLFeed.m */; };
 		5357B094123B0AD400B80617 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B05D123B0AD400B80617 /* CDataScanner.m */; };
 		5357B095123B0AD400B80617 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B060123B0AD400B80617 /* CDataScanner_Extensions.m */; };
@@ -42,6 +42,24 @@
 		5357B18F123B24B800B80617 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5357B18E123B24B800B80617 /* File.txt */; };
 		5357B227123B30C200B80617 /* Image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5357B226123B30C200B80617 /* Image.jpg */; };
 		53F906D812497C04007B028C /* UtilityFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F906D712497C04007B028C /* UtilityFunctions.m */; };
+		C512DCF01257A417003D94BB /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCE81257A417003D94BB /* AppIcon.png */; };
+		C512DCF11257A417003D94BB /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCE91257A417003D94BB /* AppIcon@2x.png */; };
+		C512DCF21257A417003D94BB /* AppIcon_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCEA1257A417003D94BB /* AppIcon_iPad.png */; };
+		C512DCF31257A417003D94BB /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = C512DCEB1257A417003D94BB /* iTunesArtwork */; };
+		C512DCF41257A417003D94BB /* Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCEC1257A417003D94BB /* Launch.png */; };
+		C512DCF51257A417003D94BB /* Launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCED1257A417003D94BB /* Launch@2x.png */; };
+		C512DCF61257A417003D94BB /* Launch_iPad-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCEE1257A417003D94BB /* Launch_iPad-Landscape.png */; };
+		C512DCF71257A417003D94BB /* Launch_iPad-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCEF1257A417003D94BB /* Launch_iPad-Portrait.png */; };
+		C512DCFA1257A53C003D94BB /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DCF91257A53C003D94BB /* MainWindow_iPad.xib */; };
+		C512DCFC1257A54E003D94BB /* RootView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DCFB1257A54E003D94BB /* RootView_iPad.xib */; };
+		C512DD381257B17B003D94BB /* PodcastTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DD361257B17B003D94BB /* PodcastTableViewController.m */; };
+		C512DD3C1257B1B7003D94BB /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DD3B1257B1B7003D94BB /* DataModel.m */; };
+		C512DD7C1257BCEA003D94BB /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DD7B1257BCEA003D94BB /* ModelViewController.m */; };
+		C512DD7F1257BDE8003D94BB /* ModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DD7E1257BDE8003D94BB /* ModelTableViewController.m */; };
+		C512DDDB1257C9CD003D94BB /* TwitterSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DDDA1257C9CD003D94BB /* TwitterSearchTableViewController.m */; };
+		C512DE5D1257DCCC003D94BB /* TwitterUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DE5C1257DCCC003D94BB /* TwitterUserTableViewController.m */; };
+		C512DE871257E5D7003D94BB /* PostFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DE851257E5D7003D94BB /* PostFormViewController.m */; };
+		C512DE881257E5D7003D94BB /* PostFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DE861257E5D7003D94BB /* PostFormViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,10 +70,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* ADModel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADModel_Prefix.pch; sourceTree = "<group>"; };
-		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../MainWindow.xib; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow_iPhone.xib; path = ../MainWindow_iPhone.xib; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		28F335F01007B36200424DE2 /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootView.xib; path = ../RootView.xib; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* RootView_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootView_iPhone.xib; path = ../RootView_iPhone.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5357B059123B0AD400B80617 /* HandleXMLFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleXMLFeed.h; sourceTree = "<group>"; };
 		5357B05A123B0AD400B80617 /* HandleXMLFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleXMLFeed.m; sourceTree = "<group>"; };
@@ -108,11 +126,37 @@
 		5357B090123B0AD400B80617 /* NetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequest.h; sourceTree = "<group>"; };
 		5357B091123B0AD400B80617 /* NetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequest.m; sourceTree = "<group>"; };
 		5357B092123B0AD400B80617 /* NetworkRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestDelegate.h; sourceTree = "<group>"; };
-		5357B18E123B24B800B80617 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
-		5357B226123B30C200B80617 /* Image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Image.jpg; sourceTree = "<group>"; };
+		5357B18E123B24B800B80617 /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = File.txt; path = Classes/File.txt; sourceTree = "<group>"; };
+		5357B226123B30C200B80617 /* Image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Image.jpg; path = ../Classes/Image.jpg; sourceTree = "<group>"; };
 		53F906D612497C04007B028C /* UtilityFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilityFunctions.h; path = Classes/UtilityFunctions.h; sourceTree = "<group>"; };
 		53F906D712497C04007B028C /* UtilityFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilityFunctions.m; path = Classes/UtilityFunctions.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ADModel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ADModel-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C512DCE81257A417003D94BB /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		C512DCE91257A417003D94BB /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
+		C512DCEA1257A417003D94BB /* AppIcon_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_iPad.png; sourceTree = "<group>"; };
+		C512DCEB1257A417003D94BB /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		C512DCEC1257A417003D94BB /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
+		C512DCED1257A417003D94BB /* Launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch@2x.png"; sourceTree = "<group>"; };
+		C512DCEE1257A417003D94BB /* Launch_iPad-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_iPad-Landscape.png"; sourceTree = "<group>"; };
+		C512DCEF1257A417003D94BB /* Launch_iPad-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_iPad-Portrait.png"; sourceTree = "<group>"; };
+		C512DCF91257A53C003D94BB /* MainWindow_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow_iPad.xib; sourceTree = "<group>"; };
+		C512DCFB1257A54E003D94BB /* RootView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView_iPad.xib; sourceTree = "<group>"; };
+		C512DD351257B17B003D94BB /* PodcastTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PodcastTableViewController.h; sourceTree = "<group>"; };
+		C512DD361257B17B003D94BB /* PodcastTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PodcastTableViewController.m; sourceTree = "<group>"; };
+		C512DD3A1257B1B7003D94BB /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		C512DD3B1257B1B7003D94BB /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		C512DD6E1257BA37003D94BB /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		C512DD7A1257BCEA003D94BB /* ModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelViewController.h; sourceTree = "<group>"; };
+		C512DD7B1257BCEA003D94BB /* ModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelViewController.m; sourceTree = "<group>"; };
+		C512DD7D1257BDE8003D94BB /* ModelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTableViewController.h; sourceTree = "<group>"; };
+		C512DD7E1257BDE8003D94BB /* ModelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTableViewController.m; sourceTree = "<group>"; };
+		C512DDD91257C9CD003D94BB /* TwitterSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchTableViewController.h; sourceTree = "<group>"; };
+		C512DDDA1257C9CD003D94BB /* TwitterSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchTableViewController.m; sourceTree = "<group>"; };
+		C512DE5B1257DCCC003D94BB /* TwitterUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUserTableViewController.h; sourceTree = "<group>"; };
+		C512DE5C1257DCCC003D94BB /* TwitterUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUserTableViewController.m; sourceTree = "<group>"; };
+		C512DE841257E5D7003D94BB /* PostFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostFormViewController.h; sourceTree = "<group>"; };
+		C512DE851257E5D7003D94BB /* PostFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostFormViewController.m; sourceTree = "<group>"; };
+		C512DE861257E5D7003D94BB /* PostFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostFormViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,14 +176,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5357B18E123B24B800B80617 /* File.txt */,
-				5357B226123B30C200B80617 /* Image.jpg */,
 				1D3623240D0F684500981E51 /* ADModelAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ADModelAppDelegate.m */,
-				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
-				28F335F01007B36200424DE2 /* RootView.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow_iPhone.xib */,
+				C512DCF91257A53C003D94BB /* MainWindow_iPad.xib */,
+				C512DD791257BCD6003D94BB /* AbstractSuperClasses */,
+				C512DD771257BC98003D94BB /* Root */,
+				C512DD781257BCBC003D94BB /* Podcast */,
+				C512DDD81257C975003D94BB /* Twitter */,
+				C512DE811257E583003D94BB /* Post */,
+				C512DD3D1257B1CA003D94BB /* Model */,
 				5357B08A123B0AD400B80617 /* Queue */,
 				5357B058123B0AD400B80617 /* Parsers */,
 			);
@@ -181,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				8D1107310486CEB800E47090 /* ADModel-Info.plist */,
+				5357B18E123B24B800B80617 /* File.txt */,
+				C512DCE71257A417003D94BB /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -308,6 +356,108 @@
 			path = Queue;
 			sourceTree = "<group>";
 		};
+		C512DCE71257A417003D94BB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5357B226123B30C200B80617 /* Image.jpg */,
+				C512DCE81257A417003D94BB /* AppIcon.png */,
+				C512DCEA1257A417003D94BB /* AppIcon_iPad.png */,
+				C512DCE91257A417003D94BB /* AppIcon@2x.png */,
+				C512DCEB1257A417003D94BB /* iTunesArtwork */,
+				C512DCEC1257A417003D94BB /* Launch.png */,
+				C512DCED1257A417003D94BB /* Launch@2x.png */,
+				C512DCEE1257A417003D94BB /* Launch_iPad-Landscape.png */,
+				C512DCEF1257A417003D94BB /* Launch_iPad-Portrait.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C512DD3D1257B1CA003D94BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C512DD3A1257B1B7003D94BB /* DataModel.h */,
+				C512DD3B1257B1B7003D94BB /* DataModel.m */,
+				C512DD6E1257BA37003D94BB /* SynthesizeSingleton.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C512DD771257BC98003D94BB /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				28F335F01007B36200424DE2 /* RootView_iPhone.xib */,
+				C512DCFB1257A54E003D94BB /* RootView_iPad.xib */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		C512DD781257BCBC003D94BB /* Podcast */ = {
+			isa = PBXGroup;
+			children = (
+				C512DD351257B17B003D94BB /* PodcastTableViewController.h */,
+				C512DD361257B17B003D94BB /* PodcastTableViewController.m */,
+			);
+			name = Podcast;
+			sourceTree = "<group>";
+		};
+		C512DD791257BCD6003D94BB /* AbstractSuperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				C512DD7A1257BCEA003D94BB /* ModelViewController.h */,
+				C512DD7B1257BCEA003D94BB /* ModelViewController.m */,
+				C512DD7D1257BDE8003D94BB /* ModelTableViewController.h */,
+				C512DD7E1257BDE8003D94BB /* ModelTableViewController.m */,
+			);
+			name = AbstractSuperClasses;
+			sourceTree = "<group>";
+		};
+		C512DDD81257C975003D94BB /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				C512DE591257DCA9003D94BB /* Search */,
+				C512DE5A1257DCAF003D94BB /* User */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+		C512DE591257DCA9003D94BB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C512DDD91257C9CD003D94BB /* TwitterSearchTableViewController.h */,
+				C512DDDA1257C9CD003D94BB /* TwitterSearchTableViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		C512DE5A1257DCAF003D94BB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C512DE5B1257DCCC003D94BB /* TwitterUserTableViewController.h */,
+				C512DE5C1257DCCC003D94BB /* TwitterUserTableViewController.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		C512DE811257E583003D94BB /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				C512DE821257E591003D94BB /* Form */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		C512DE821257E591003D94BB /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				C512DE841257E5D7003D94BB /* PostFormViewController.h */,
+				C512DE851257E5D7003D94BB /* PostFormViewController.m */,
+				C512DE861257E5D7003D94BB /* PostFormViewController.xib */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,10 +508,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
-				28F335F11007B36200424DE2 /* RootView.xib in Resources */,
+				28AD73600D9D9599002E5188 /* MainWindow_iPhone.xib in Resources */,
+				28F335F11007B36200424DE2 /* RootView_iPhone.xib in Resources */,
 				5357B18F123B24B800B80617 /* File.txt in Resources */,
 				5357B227123B30C200B80617 /* Image.jpg in Resources */,
+				C512DCF01257A417003D94BB /* AppIcon.png in Resources */,
+				C512DCF11257A417003D94BB /* AppIcon@2x.png in Resources */,
+				C512DCF21257A417003D94BB /* AppIcon_iPad.png in Resources */,
+				C512DCF31257A417003D94BB /* iTunesArtwork in Resources */,
+				C512DCF41257A417003D94BB /* Launch.png in Resources */,
+				C512DCF51257A417003D94BB /* Launch@2x.png in Resources */,
+				C512DCF61257A417003D94BB /* Launch_iPad-Landscape.png in Resources */,
+				C512DCF71257A417003D94BB /* Launch_iPad-Portrait.png in Resources */,
+				C512DCFA1257A53C003D94BB /* MainWindow_iPad.xib in Resources */,
+				C512DCFC1257A54E003D94BB /* RootView_iPad.xib in Resources */,
+				C512DE881257E5D7003D94BB /* PostFormViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +561,13 @@
 				5357B0A9123B0AD400B80617 /* NetworkOperationQueue.m in Sources */,
 				5357B0AA123B0AD400B80617 /* NetworkRequest.m in Sources */,
 				53F906D812497C04007B028C /* UtilityFunctions.m in Sources */,
+				C512DD381257B17B003D94BB /* PodcastTableViewController.m in Sources */,
+				C512DD3C1257B1B7003D94BB /* DataModel.m in Sources */,
+				C512DD7C1257BCEA003D94BB /* ModelViewController.m in Sources */,
+				C512DD7F1257BDE8003D94BB /* ModelTableViewController.m in Sources */,
+				C512DDDB1257C9CD003D94BB /* TwitterSearchTableViewController.m in Sources */,
+				C512DE5D1257DCCC003D94BB /* TwitterUserTableViewController.m in Sources */,
+				C512DE871257E5D7003D94BB /* PostFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +614,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -464,7 +634,9 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
