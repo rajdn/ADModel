@@ -60,6 +60,9 @@
 		C512DE5D1257DCCC003D94BB /* TwitterUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DE5C1257DCCC003D94BB /* TwitterUserTableViewController.m */; };
 		C512DE871257E5D7003D94BB /* PostFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DE851257E5D7003D94BB /* PostFormViewController.m */; };
 		C512DE881257E5D7003D94BB /* PostFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DE861257E5D7003D94BB /* PostFormViewController.xib */; };
+		C512DEFD12580B93003D94BB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DEFC12580B93003D94BB /* Reachability.m */; };
+		C512DF1F12580E92003D94BB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C512DF1E12580E92003D94BB /* SystemConfiguration.framework */; };
+		C512DF2312580E9A003D94BB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C512DF2212580E9A003D94BB /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +160,10 @@
 		C512DE841257E5D7003D94BB /* PostFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostFormViewController.h; sourceTree = "<group>"; };
 		C512DE851257E5D7003D94BB /* PostFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostFormViewController.m; sourceTree = "<group>"; };
 		C512DE861257E5D7003D94BB /* PostFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostFormViewController.xib; sourceTree = "<group>"; };
+		C512DEFB12580B93003D94BB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C512DEFC12580B93003D94BB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C512DF1E12580E92003D94BB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C512DF2212580E9A003D94BB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +174,8 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				C512DF1F12580E92003D94BB /* SystemConfiguration.framework in Frameworks */,
+				C512DF2312580E9A003D94BB /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +248,8 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				C512DF1E12580E92003D94BB /* SystemConfiguration.framework */,
+				C512DF2212580E9A003D94BB /* CFNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,6 +389,8 @@
 				C512DD3A1257B1B7003D94BB /* DataModel.h */,
 				C512DD3B1257B1B7003D94BB /* DataModel.m */,
 				C512DD6E1257BA37003D94BB /* SynthesizeSingleton.h */,
+				C512DEFB12580B93003D94BB /* Reachability.h */,
+				C512DEFC12580B93003D94BB /* Reachability.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -568,6 +581,7 @@
 				C512DDDB1257C9CD003D94BB /* TwitterSearchTableViewController.m in Sources */,
 				C512DE5D1257DCCC003D94BB /* TwitterUserTableViewController.m in Sources */,
 				C512DE871257E5D7003D94BB /* PostFormViewController.m in Sources */,
+				C512DEFD12580B93003D94BB /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
