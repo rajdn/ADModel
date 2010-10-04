@@ -25,6 +25,8 @@
 #import "PostFormViewController.h"
 #import "PutCreateViewController.h"
 #import "PutNoContentViewController.h"
+#import "PostFileViewController.h"
+#import "PostMultiFileViewController.h"
 
 @implementation RootViewController
 @synthesize	podcastFeedButton;
@@ -124,11 +126,11 @@
 }
 - (IBAction)postFileButton:(id)sender
 {
-	
+	[self pushViewController:@"PostFileViewController"];
 }
 - (IBAction)postMultipleFilesButton:(id)sender
 {
-	
+	[self pushViewController:@"PostMultiFileViewController"];
 }
 - (IBAction)timeoutButton:(id)sender
 {

@@ -71,6 +71,12 @@
 		C512E02312595596003D94BB /* PutNoContentViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E02112595596003D94BB /* PutNoContentViewController~iPad.xib */; };
 		C512E02412595596003D94BB /* PutNoContentViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E02212595596003D94BB /* PutNoContentViewController~iPhone.xib */; };
 		C512E05C12596606003D94BB /* GUIFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C512E05B12596606003D94BB /* GUIFunctions.m */; };
+		C512E12E12598E42003D94BB /* PostFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512E12D12598E42003D94BB /* PostFileViewController.m */; };
+		C512E1331259907B003D94BB /* PostFileViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E1311259907B003D94BB /* PostFileViewController~iPad.xib */; };
+		C512E1341259907B003D94BB /* PostFileViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E1321259907B003D94BB /* PostFileViewController~iPhone.xib */; };
+		C512E1481259946B003D94BB /* PostMultiFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512E1471259946B003D94BB /* PostMultiFileViewController.m */; };
+		C512E14B12599490003D94BB /* PostMultiFileViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E14912599490003D94BB /* PostMultiFileViewController~iPad.xib */; };
+		C512E14C12599490003D94BB /* PostMultiFileViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E14A12599490003D94BB /* PostMultiFileViewController~iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +189,14 @@
 		C512E02212595596003D94BB /* PutNoContentViewController~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PutNoContentViewController~iPhone.xib"; sourceTree = "<group>"; };
 		C512E05A12596606003D94BB /* GUIFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIFunctions.h; sourceTree = "<group>"; };
 		C512E05B12596606003D94BB /* GUIFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIFunctions.m; sourceTree = "<group>"; };
+		C512E12C12598E42003D94BB /* PostFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostFileViewController.h; sourceTree = "<group>"; };
+		C512E12D12598E42003D94BB /* PostFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostFileViewController.m; sourceTree = "<group>"; };
+		C512E1311259907B003D94BB /* PostFileViewController~iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PostFileViewController~iPad.xib"; sourceTree = "<group>"; };
+		C512E1321259907B003D94BB /* PostFileViewController~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PostFileViewController~iPhone.xib"; sourceTree = "<group>"; };
+		C512E1461259946B003D94BB /* PostMultiFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostMultiFileViewController.h; sourceTree = "<group>"; };
+		C512E1471259946B003D94BB /* PostMultiFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostMultiFileViewController.m; sourceTree = "<group>"; };
+		C512E14912599490003D94BB /* PostMultiFileViewController~iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PostMultiFileViewController~iPad.xib"; sourceTree = "<group>"; };
+		C512E14A12599490003D94BB /* PostMultiFileViewController~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PostMultiFileViewController~iPhone.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +486,8 @@
 			isa = PBXGroup;
 			children = (
 				C512DE821257E591003D94BB /* Form */,
+				C512E12B12598E2C003D94BB /* File */,
+				C512E14512599453003D94BB /* Multi */,
 			);
 			name = Post;
 			sourceTree = "<group>";
@@ -531,6 +547,28 @@
 				C512DF9D12594A7D003D94BB /* Put */,
 			);
 			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		C512E12B12598E2C003D94BB /* File */ = {
+			isa = PBXGroup;
+			children = (
+				C512E12C12598E42003D94BB /* PostFileViewController.h */,
+				C512E12D12598E42003D94BB /* PostFileViewController.m */,
+				C512E1311259907B003D94BB /* PostFileViewController~iPad.xib */,
+				C512E1321259907B003D94BB /* PostFileViewController~iPhone.xib */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
+		C512E14512599453003D94BB /* Multi */ = {
+			isa = PBXGroup;
+			children = (
+				C512E1461259946B003D94BB /* PostMultiFileViewController.h */,
+				C512E1471259946B003D94BB /* PostMultiFileViewController.m */,
+				C512E14912599490003D94BB /* PostMultiFileViewController~iPad.xib */,
+				C512E14A12599490003D94BB /* PostMultiFileViewController~iPhone.xib */,
+			);
+			name = Multi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,6 +641,10 @@
 				C512DFE1125950B2003D94BB /* PutCreateViewController~iPhone.xib in Resources */,
 				C512E02312595596003D94BB /* PutNoContentViewController~iPad.xib in Resources */,
 				C512E02412595596003D94BB /* PutNoContentViewController~iPhone.xib in Resources */,
+				C512E1331259907B003D94BB /* PostFileViewController~iPad.xib in Resources */,
+				C512E1341259907B003D94BB /* PostFileViewController~iPhone.xib in Resources */,
+				C512E14B12599490003D94BB /* PostMultiFileViewController~iPad.xib in Resources */,
+				C512E14C12599490003D94BB /* PostMultiFileViewController~iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +694,8 @@
 				C512DFA212594AAB003D94BB /* PutCreateViewController.m in Sources */,
 				C512E01F125954A3003D94BB /* PutNoContentViewController.m in Sources */,
 				C512E05C12596606003D94BB /* GUIFunctions.m in Sources */,
+				C512E12E12598E42003D94BB /* PostFileViewController.m in Sources */,
+				C512E1481259946B003D94BB /* PostMultiFileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

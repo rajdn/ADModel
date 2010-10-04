@@ -40,7 +40,7 @@
 	//	Setup Activity Indicator
 	//	
 	UIActivityIndicatorView	*	anActivityIndicator	=
-	[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+	[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? UIActivityIndicatorViewStyleGray : UIActivityIndicatorViewStyleWhite];
 	if (anActivityIndicator)
 	{
 		self.activityIndicator					=	anActivityIndicator;

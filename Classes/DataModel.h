@@ -89,6 +89,8 @@ typedef enum {
 - (void)twitterSearchFeed:(NSArray *)tweets;
 - (void)twitterUserFeed:(NSArray *)tweets;
 - (void)postPrint:(NSString *)result;
+- (void)postFile:(NSString *)result;
+- (void)postMultiFile:(NSString *)result;
 - (void)putCreate:(NSString *)response;
 - (void)putNoContent:(NSString *)response;
 @end

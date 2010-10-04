@@ -157,7 +157,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 	op.requestType				=	MULTI;
 	op.parseType				=	ParseXML;
 	op.xPath					=	@"root";
-	op.instanceCode				=	6;
+	op.instanceCode				=	kPostMultiFilePrint;
 	op.URI						=	@"/ESModelAPI/Post/Multipart/";
 	op.bodyBufferDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
 										 @"valueOne", @"keyOne",
@@ -605,6 +605,30 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 			{
 				if ([delegate respondsToSelector:@selector(postPrint:)])
 					[delegate postPrint:resultString];
+			}
+			CleanRelease(dlgts);
+			break;
+		case kPostFilePrintCode:
+			NSParameterAssert([result isKindOfClass:[NSArray class]]);
+			resultString	=	[NSString stringWithFormat:@"%@", result];
+			NSParameterAssert((resultString != nil));
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
+			for (id delegate in dlgts)
+			{
+				if ([delegate respondsToSelector:@selector(postFile:)])
+					[delegate postFile:resultString];
+			}
+			CleanRelease(dlgts);
+			break;
+		case kPostMultiFilePrint:
+			NSParameterAssert([result isKindOfClass:[NSArray class]]);
+			resultString	=	[NSString stringWithFormat:@"%@", result];
+			NSParameterAssert((resultString != nil));
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
+			for (id delegate in dlgts)
+			{
+				if ([delegate respondsToSelector:@selector(postMultiFile:)])
+					[delegate postMultiFile:resultString];
 			}
 			CleanRelease(dlgts);
 			break;
