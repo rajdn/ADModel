@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -46,7 +47,6 @@
 						<int key="NSvFlags">294</int>
 						<string key="NSFrameSize">{768, 180}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="909851847">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -58,7 +58,12 @@
 						<string type="base64-UTF8" key="IBUIText">U2VuZHMgYW4gSFRUUCBQdXQgdG8gYSBzaW1wbGUgc2NyaXB0IHRoYXQgY2hlY2tzIGZvciBjb250ZW50
 IGFuZCBzZW5kcyBiYWNrIGEgMjA0IE5vLUNvbnRlbnQgaGVhZGVyLiBCZWNhdXNlIHRoZXJlIGlzIG5v
 IENvbnRlbnQsIHRoZSByZXNwb25zZSBoZWFkZXJzIHdpbGwgYmUgZGlzcGxheWVkLiBFeHBlY3RlZCBy
-ZXN1bHRzIGFyZToKClB1dCBUZXN0IFN0cmluZwoKMjAxIENyZWF0ZWQ</string>
+ZXN1bHRzIGFyZToKClJlc3BvbnNlIFN0YXR1cyBDb2RlOiAyMDQKSGVhZGVyczogewogICAgIkNhY2hl
+LUNvbnRyb2wiID0gIm5vLWNhY2hlLCBtdXN0LXJldmFsaWRhdGUsIG1heC1hZ2U9MCI7CiAgICBDb25u
+ZWN0aW9uID0gY2xvc2U7CiAgICAiQ29udGVudC1MZW5ndGgiID0gMDsKICAgICJDb250ZW50LVR5cGUi
+ID0gInRleHQvaHRtbDsgY2hhcnNldD1VVEYtOCI7CiAgICBEYXRlID0gIk1vbiwgMDQgT2N0IDIwMTAg
+MDA6Mjg6MTggR01UIjsKICAgIFNlcnZlciA9ICJBcGFjaGUvMi4yLjMgKENlbnRPUykiOwogICAgIlgt
+UG93ZXJlZC1CeSIgPSAiUEhQLzUuMS42IjsKfQ</string>
 						<object class="NSFont" key="IBUIFont" id="716451684">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">12</double>
@@ -74,7 +79,6 @@ ZXN1bHRzIGFyZToKClB1dCBUZXN0IFN0cmluZwoKMjAxIENyZWF0ZWQ</string>
 						<int key="NSvFlags">310</int>
 						<string key="NSFrame">{{0, 262}, {768, 354}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
 						<reference key="IBUIBackgroundColor" ref="909851847"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -92,7 +96,6 @@ ZXN1bHRzIGFyZToKClB1dCBUZXN0IFN0cmluZwoKMjAxIENyZWF0ZWQ</string>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{244, 188}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -122,7 +125,6 @@ ZXN1bHRzIGFyZToKClB1dCBUZXN0IFN0cmluZwoKMjAxIENyZWF0ZWQ</string>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{4, 233}, {62, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -140,7 +142,6 @@ ZXN1bHRzIGFyZToKClB1dCBUZXN0IFN0cmluZwoKMjAxIENyZWF0ZWQ</string>
 				</object>
 				<string key="NSFrameSize">{768, 960}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -271,7 +272,7 @@ ZXN1bHRzIGFyZToKClB1dCBUZXN0IFN0cmluZwoKMjAxIENyZWF0ZWQ</string>
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>PutNoContentViewController</string>
 					<string>UIResponder</string>
-					<string>{{208, 0}, {783, 980}}</string>
+					<string>{{88, 0}, {783, 980}}</string>
 					<object class="NSMutableDictionary">
 						<string key="NS.key.0">IBCocoaTouchFramework</string>
 						<integer value="0" key="NS.object.0"/>
