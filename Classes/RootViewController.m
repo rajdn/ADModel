@@ -23,6 +23,8 @@
 #import "TwitterSearchTableViewController.h"
 #import "TwitterUserTableViewController.h"
 #import "PostFormViewController.h"
+#import "PutCreateViewController.h"
+#import "PutNoContentViewController.h"
 
 @implementation RootViewController
 @synthesize	podcastFeedButton;
@@ -47,8 +49,9 @@
 - (void)viewDidLoad 
 {
 	[super viewDidLoad];
+	[self.activityIndicator stopAnimating];
 	if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-		[(UIScrollView *)self.view setContentSize:CGSizeMake(320, 1040)];
+		[(UIScrollView *)self.view setContentSize:CGSizeMake(self.view.bounds.size.width, 1100)];
 }
 - (void)viewDidUnload 
 {
@@ -67,13 +70,10 @@
 	self.putCreateButton			=	nil;
 	self.putNoContentURL			=	nil;
 }
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-		return YES;
-	else
-		return ((toInterfaceOrientation == UIInterfaceOrientationPortrait) ||
-				(toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown));	
+	if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+		[(UIScrollView *)self.view setContentSize:CGSizeMake(self.view.bounds.size.width, 1100)];
 }
 /******************************************************************************/
 #pragma mark -
@@ -132,31 +132,36 @@
 }
 - (IBAction)timeoutButton:(id)sender
 {
-	
+	BasicAlert(@"Timeout", 
+			   @"Timeout will occur in 15 seconds", 
+			   nil, 
+			   @"OK", 
+			   nil);
+	[model timeout];
 }
 - (IBAction)missingFileButton:(id)sender
 {
-	
+	[model missingFile];
 }
 - (IBAction)forbiddenURLButton:(id)sender
 {
-	
+	[model forbiddenURL];
 }
 - (IBAction)badServerURLButton:(id)sender
 {
-	
+	[model badServerURL];
 }
 - (IBAction)unavailableURLButton:(id)sender
 {
-	
+	[model unavailableURL];
 }
 - (IBAction)putCreateButton:(id)sender
 {
-	
+	[self pushViewController:@"PutCreateViewController"];
 }
 - (IBAction)putNoContentURL:(id)sender
 {
-	
+	[self pushViewController:@"PutNoContentViewController"];
 }
 - (void)pushTableViewController:(NSString *)className
 {
@@ -168,9 +173,31 @@
 - (void)pushViewController:(NSString *)className
 {
 	UIViewController	*	viewController	=	
-	[[NSClassFromString(className) alloc] initWithNibName:className bundle:nil];
+	[[NSClassFromString(className) alloc] initWithNibName:[NSString stringWithFormat:@"%@%@", className, (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? @"~iPad" : @"~iPhone"] bundle:nil];
 	[self.navigationController pushViewController:viewController animated:YES];
 	[viewController release];
+}
+/******************************************************************************/
+#pragma mark -
+#pragma mark Data Model Delegate
+#pragma mark -
+/******************************************************************************/
+- (void)error:(NSError *)error operationCode:(NSInteger)code
+{
+	if (code == kTimeoutCode ||
+		code == kBadURLCode ||
+		code == kForbiddenURLCode ||
+		code == kBadServerURLCode ||
+		code == kUnavailableURLCode ||
+		code == kPutCreateURL ||
+		code == kPutNoContentURL)
+	{
+		BasicAlert(@"Error", 
+				   [NSString stringWithFormat:@"%@ : %@", error.domain, [model stringForNSURLError:error.code]], 
+				   nil, 
+				   @"OK", 
+				   nil);
+	}
 }
 
 @end

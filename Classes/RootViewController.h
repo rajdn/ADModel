@@ -19,8 +19,9 @@
 //  
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 
-@interface RootViewController : UIViewController
+@interface RootViewController : ModelViewController
 {
 	UIButton	*	podcastFeedButton;
 	UIButton	*	twitterSearchFeedButton;

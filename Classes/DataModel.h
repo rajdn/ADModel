@@ -31,6 +31,7 @@ typedef enum {
 	kBadServerURLCode,
 	kUnavailableURLCode,
 	kPutCreateURL,
+	kPutNoContentURL,
 } OperationCodes;
 
 #import <Foundation/Foundation.h>
@@ -77,14 +78,17 @@ typedef enum {
 - (void)putNoContentURL;
 
 - (NSString *)generateConnectionID;
-- (NSString *)logNSURLError:(int)errorCode;
+- (NSString *)stringForNSURLError:(int)errorCode;
 
 @end
 
 @protocol DataModelDelegate
+- (void)error:(NSError *)error operationCode:(NSInteger)code;
 @optional
 - (void)podcastFeed:(NSArray *)feedItems;
 - (void)twitterSearchFeed:(NSArray *)tweets;
 - (void)twitterUserFeed:(NSArray *)tweets;
 - (void)postPrint:(NSString *)result;
+- (void)putCreate:(NSString *)response;
+- (void)putNoContent:(NSString *)response;
 @end

@@ -27,14 +27,6 @@
     [super viewDidLoad];
 	[model twitterUserFeed];
 }
-- (void)twitterUserFeed:(NSArray *)tweets
-{
-	self.items	=	tweets;
-	[self reloadTableView];
-	[self.activityIndicator stopAnimating];
-	if (self.items.count > 0)
-		self.navigationItem.title	=	[[[self.items objectAtIndex:0] objectForKey:@"user"] objectForKey:@"screen_name"];
-}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	static NSString *CellIdentifier = @"Cell";
@@ -43,6 +35,30 @@
 	    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
 	cell.detailTextLabel.text	=	[[self.items objectAtIndex:indexPath.row] objectForKey:@"text"];
 	return cell;
+}
+/******************************************************************************/
+#pragma mark -
+#pragma mark Data Model Delegate
+#pragma mark -
+/******************************************************************************/
+- (void)error:(NSError *)error operationCode:(NSInteger)code
+{
+	if (code == kTwitterUserFeedCode)
+	{
+		BasicAlert(@"Error", 
+				   error.domain, 
+				   nil, 
+				   @"OK", 
+				   nil);
+	}
+}
+- (void)twitterUserFeed:(NSArray *)tweets
+{
+	self.items	=	tweets;
+	[self reloadTableView];
+	[self.activityIndicator stopAnimating];
+	if (self.items.count > 0)
+		self.navigationItem.title	=	[[[self.items objectAtIndex:0] objectForKey:@"user"] objectForKey:@"screen_name"];
 }
 
 @end

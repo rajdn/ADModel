@@ -27,6 +27,7 @@
 - (void)viewDidLoad 
 {
 	[super viewDidLoad];
+	self.navigationItem.title	=	@"Post Form";
 	[self.activityIndicator stopAnimating];
 }
 - (void)viewDidUnload 
@@ -34,10 +35,6 @@
 	[super viewDidUnload];
 	self.postButton		=	nil;
 	self.resultTextView	=	nil;
-}
-- (void)didReceiveMemoryWarning 
-{
-	[super didReceiveMemoryWarning];
 }
 - (void)dealloc 
 {
@@ -51,6 +48,22 @@
 	self.resultTextView.text	=	@"";
 	[self.activityIndicator startAnimating];
 	[model postPrint];
+}
+/******************************************************************************/
+#pragma mark -
+#pragma mark Data Model Delegate
+#pragma mark -
+/******************************************************************************/
+- (void)error:(NSError *)error operationCode:(NSInteger)code
+{
+	if (code == kPostPrintCode)
+	{
+		BasicAlert(@"Error", 
+				   error.domain, 
+				   nil, 
+				   @"OK", 
+				   nil);
+	}
 }
 - (void)postPrint:(NSString *)result
 {

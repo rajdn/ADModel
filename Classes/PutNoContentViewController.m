@@ -1,5 +1,5 @@
 //
-//  PodcastTableViewController.m
+//  PutNoContentViewController.m
 //	ADModel
 //	
 //	Created by Doug Russell on 9/9/10.
@@ -18,24 +18,36 @@
 //  limitations under the License.
 //  
 
-#import "PodcastTableViewController.h"
+#import "PutNoContentViewController.h"
 
-@implementation PodcastTableViewController
+@implementation PutNoContentViewController
+@synthesize putButton;
+@synthesize resultTextView;
 
 - (void)viewDidLoad 
 {
-    [super viewDidLoad];
-	self.navigationItem.title	=	@"Podcast";
-	[model podcastFeed];
+	[super viewDidLoad];
+	self.navigationItem.title	=	@"Put No-Content";
+	[self.activityIndicator stopAnimating];
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (void)viewDidUnload 
 {
-	static NSString *CellIdentifier = @"Cell";
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (cell == nil)
-	    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-	cell.textLabel.text	=	[[self.items objectAtIndex:indexPath.row] objectForKey:@"title"];
-	return cell;
+	[super viewDidUnload];
+	self.putButton		=	nil;
+	self.resultTextView	=	nil;
+}
+- (void)dealloc 
+{
+	CleanRelease(putButton);
+	CleanRelease(resultTextView);
+	[super dealloc];
+}
+- (IBAction)putButtonPressed:(id)sender
+{
+	self.putButton.enabled		=	NO;
+	self.resultTextView.text	=	@"";
+	[self.activityIndicator startAnimating];
+	[model putNoContentURL];
 }
 /******************************************************************************/
 #pragma mark -
@@ -44,7 +56,7 @@
 /******************************************************************************/
 - (void)error:(NSError *)error operationCode:(NSInteger)code
 {
-	if (code == kPodcastFeedCode)
+	if (code == kPutNoContentURL)
 	{
 		BasicAlert(@"Error", 
 				   error.domain, 
@@ -53,12 +65,11 @@
 				   nil);
 	}
 }
-- (void)podcastFeed:(NSArray *)feedItems
+- (void)putNoContent:(NSString *)response;
 {
-	self.items	=	feedItems;
-	[self reloadTableView];
+	self.resultTextView.text	=	response;
+	self.putButton.enabled		=	YES;
 	[self.activityIndicator stopAnimating];
 }
 
 @end
-

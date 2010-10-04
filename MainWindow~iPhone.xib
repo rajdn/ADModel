@@ -76,6 +76,7 @@
 					<object class="IBUIViewController" id="619226028">
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="394667715">
 							<reference key="IBUINavigationBar"/>
+							<string key="IBUITitle">Asynchronous Data Model</string>
 							<object class="IBUIBarButtonItem" key="IBUIBackBarButtonItem" id="362741923">
 								<string key="IBUITitle">Back</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -84,7 +85,7 @@
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="701001926"/>
-						<string key="IBUINibName">RootView_iPhone</string>
+						<string key="IBUINibName">RootView~iPhone</string>
 						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 							<int key="interfaceOrientation">1</int>
@@ -231,7 +232,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>ADModelAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{186, 376}, {320, 480}}</string>
+					<string>{{640, 98}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
@@ -322,10 +323,12 @@
 							<string>putNoContentURL:</string>
 							<string>timeoutButton:</string>
 							<string>twitterSearchFeedButton:</string>
+							<string>twitterUserFeedButton:</string>
 							<string>unavailableURLButton:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -355,6 +358,7 @@
 							<string>putNoContentURL:</string>
 							<string>timeoutButton:</string>
 							<string>twitterSearchFeedButton:</string>
+							<string>twitterUserFeedButton:</string>
 							<string>unavailableURLButton:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -404,6 +408,10 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">twitterUserFeedButton:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">unavailableURLButton:</string>
 								<string key="candidateClassName">id</string>
 							</object>
@@ -424,10 +432,12 @@
 							<string>putNoContentURL</string>
 							<string>timeoutButton</string>
 							<string>twitterSearchFeedButton</string>
+							<string>twitterUserButton</string>
 							<string>unavailableURLButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
@@ -457,6 +467,7 @@
 							<string>putNoContentURL</string>
 							<string>timeoutButton</string>
 							<string>twitterSearchFeedButton</string>
+							<string>twitterUserButton</string>
 							<string>unavailableURLButton</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -503,6 +514,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">twitterSearchFeedButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">twitterUserButton</string>
 								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">

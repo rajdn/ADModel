@@ -25,13 +25,8 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+	self.navigationItem.title	=	@"Twitter Search";
 	[model twitterSearchFeed];
-}
-- (void)twitterSearchFeed:(NSArray *)tweets
-{
-	self.items	=	tweets;
-	[self reloadTableView];
-	[self.activityIndicator stopAnimating];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
@@ -42,6 +37,28 @@
 	cell.textLabel.text			=	[[self.items objectAtIndex:indexPath.row] objectForKey:@"from_user"];
 	cell.detailTextLabel.text	=	[[self.items objectAtIndex:indexPath.row] objectForKey:@"text"];
 	return cell;
+}
+/******************************************************************************/
+#pragma mark -
+#pragma mark Data Model Delegate
+#pragma mark -
+/******************************************************************************/
+- (void)error:(NSError *)error operationCode:(NSInteger)code
+{
+	if (code == kTwitterSearchFeedCode)
+	{
+		BasicAlert(@"Error", 
+				   error.domain, 
+				   nil, 
+				   @"OK", 
+				   nil);
+	}
+}
+- (void)twitterSearchFeed:(NSArray *)tweets
+{
+	self.items	=	tweets;
+	[self reloadTableView];
+	[self.activityIndicator stopAnimating];
 }
 
 @end

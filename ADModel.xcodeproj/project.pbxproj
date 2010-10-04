@@ -12,9 +12,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		28AD73600D9D9599002E5188 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow_iPhone.xib */; };
+		28AD73600D9D9599002E5188 /* MainWindow~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow~iPhone.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
-		28F335F11007B36200424DE2 /* RootView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootView_iPhone.xib */; };
+		28F335F11007B36200424DE2 /* RootView~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootView~iPhone.xib */; };
 		5357B093123B0AD400B80617 /* HandleXMLFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B05A123B0AD400B80617 /* HandleXMLFeed.m */; };
 		5357B094123B0AD400B80617 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B05D123B0AD400B80617 /* CDataScanner.m */; };
 		5357B095123B0AD400B80617 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5357B060123B0AD400B80617 /* CDataScanner_Extensions.m */; };
@@ -50,8 +50,8 @@
 		C512DCF51257A417003D94BB /* Launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCED1257A417003D94BB /* Launch@2x.png */; };
 		C512DCF61257A417003D94BB /* Launch_iPad-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCEE1257A417003D94BB /* Launch_iPad-Landscape.png */; };
 		C512DCF71257A417003D94BB /* Launch_iPad-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C512DCEF1257A417003D94BB /* Launch_iPad-Portrait.png */; };
-		C512DCFA1257A53C003D94BB /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DCF91257A53C003D94BB /* MainWindow_iPad.xib */; };
-		C512DCFC1257A54E003D94BB /* RootView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DCFB1257A54E003D94BB /* RootView_iPad.xib */; };
+		C512DCFA1257A53C003D94BB /* MainWindow~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DCF91257A53C003D94BB /* MainWindow~iPad.xib */; };
+		C512DCFC1257A54E003D94BB /* RootView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DCFB1257A54E003D94BB /* RootView~iPad.xib */; };
 		C512DD381257B17B003D94BB /* PodcastTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DD361257B17B003D94BB /* PodcastTableViewController.m */; };
 		C512DD3C1257B1B7003D94BB /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DD3B1257B1B7003D94BB /* DataModel.m */; };
 		C512DD7C1257BCEA003D94BB /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DD7B1257BCEA003D94BB /* ModelViewController.m */; };
@@ -59,10 +59,18 @@
 		C512DDDB1257C9CD003D94BB /* TwitterSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DDDA1257C9CD003D94BB /* TwitterSearchTableViewController.m */; };
 		C512DE5D1257DCCC003D94BB /* TwitterUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DE5C1257DCCC003D94BB /* TwitterUserTableViewController.m */; };
 		C512DE871257E5D7003D94BB /* PostFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DE851257E5D7003D94BB /* PostFormViewController.m */; };
-		C512DE881257E5D7003D94BB /* PostFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DE861257E5D7003D94BB /* PostFormViewController.xib */; };
+		C512DE881257E5D7003D94BB /* PostFormViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DE861257E5D7003D94BB /* PostFormViewController~iPhone.xib */; };
 		C512DEFD12580B93003D94BB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DEFC12580B93003D94BB /* Reachability.m */; };
 		C512DF1F12580E92003D94BB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C512DF1E12580E92003D94BB /* SystemConfiguration.framework */; };
 		C512DF2312580E9A003D94BB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C512DF2212580E9A003D94BB /* CFNetwork.framework */; };
+		C512DFA212594AAB003D94BB /* PutCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512DFA012594AAB003D94BB /* PutCreateViewController.m */; };
+		C512DFAE12594C71003D94BB /* PostFormViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DFAD12594C71003D94BB /* PostFormViewController~iPad.xib */; };
+		C512DFE0125950B2003D94BB /* PutCreateViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DFDE125950B2003D94BB /* PutCreateViewController~iPad.xib */; };
+		C512DFE1125950B2003D94BB /* PutCreateViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512DFDF125950B2003D94BB /* PutCreateViewController~iPhone.xib */; };
+		C512E01F125954A3003D94BB /* PutNoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C512E01D125954A3003D94BB /* PutNoContentViewController.m */; };
+		C512E02312595596003D94BB /* PutNoContentViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E02112595596003D94BB /* PutNoContentViewController~iPad.xib */; };
+		C512E02412595596003D94BB /* PutNoContentViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C512E02212595596003D94BB /* PutNoContentViewController~iPhone.xib */; };
+		C512E05C12596606003D94BB /* GUIFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C512E05B12596606003D94BB /* GUIFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,10 +81,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* ADModel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADModel_Prefix.pch; sourceTree = "<group>"; };
-		28AD735F0D9D9599002E5188 /* MainWindow_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow_iPhone.xib; path = ../MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow~iPhone.xib"; path = "../MainWindow~iPhone.xib"; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		28F335F01007B36200424DE2 /* RootView_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootView_iPhone.xib; path = ../RootView_iPhone.xib; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* RootView~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "RootView~iPhone.xib"; path = "../RootView~iPhone.xib"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5357B059123B0AD400B80617 /* HandleXMLFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleXMLFeed.h; sourceTree = "<group>"; };
 		5357B05A123B0AD400B80617 /* HandleXMLFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleXMLFeed.m; sourceTree = "<group>"; };
@@ -142,8 +150,8 @@
 		C512DCED1257A417003D94BB /* Launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch@2x.png"; sourceTree = "<group>"; };
 		C512DCEE1257A417003D94BB /* Launch_iPad-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_iPad-Landscape.png"; sourceTree = "<group>"; };
 		C512DCEF1257A417003D94BB /* Launch_iPad-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch_iPad-Portrait.png"; sourceTree = "<group>"; };
-		C512DCF91257A53C003D94BB /* MainWindow_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow_iPad.xib; sourceTree = "<group>"; };
-		C512DCFB1257A54E003D94BB /* RootView_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView_iPad.xib; sourceTree = "<group>"; };
+		C512DCF91257A53C003D94BB /* MainWindow~iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow~iPad.xib"; sourceTree = "<group>"; };
+		C512DCFB1257A54E003D94BB /* RootView~iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "RootView~iPad.xib"; sourceTree = "<group>"; };
 		C512DD351257B17B003D94BB /* PodcastTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PodcastTableViewController.h; sourceTree = "<group>"; };
 		C512DD361257B17B003D94BB /* PodcastTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PodcastTableViewController.m; sourceTree = "<group>"; };
 		C512DD3A1257B1B7003D94BB /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
@@ -159,11 +167,22 @@
 		C512DE5C1257DCCC003D94BB /* TwitterUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUserTableViewController.m; sourceTree = "<group>"; };
 		C512DE841257E5D7003D94BB /* PostFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostFormViewController.h; sourceTree = "<group>"; };
 		C512DE851257E5D7003D94BB /* PostFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostFormViewController.m; sourceTree = "<group>"; };
-		C512DE861257E5D7003D94BB /* PostFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostFormViewController.xib; sourceTree = "<group>"; };
+		C512DE861257E5D7003D94BB /* PostFormViewController~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PostFormViewController~iPhone.xib"; sourceTree = "<group>"; };
 		C512DEFB12580B93003D94BB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C512DEFC12580B93003D94BB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C512DF1E12580E92003D94BB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C512DF2212580E9A003D94BB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C512DF9F12594AAB003D94BB /* PutCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutCreateViewController.h; sourceTree = "<group>"; };
+		C512DFA012594AAB003D94BB /* PutCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutCreateViewController.m; sourceTree = "<group>"; };
+		C512DFAD12594C71003D94BB /* PostFormViewController~iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PostFormViewController~iPad.xib"; sourceTree = "<group>"; };
+		C512DFDE125950B2003D94BB /* PutCreateViewController~iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PutCreateViewController~iPad.xib"; sourceTree = "<group>"; };
+		C512DFDF125950B2003D94BB /* PutCreateViewController~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PutCreateViewController~iPhone.xib"; sourceTree = "<group>"; };
+		C512E01C125954A3003D94BB /* PutNoContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutNoContentViewController.h; sourceTree = "<group>"; };
+		C512E01D125954A3003D94BB /* PutNoContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutNoContentViewController.m; sourceTree = "<group>"; };
+		C512E02112595596003D94BB /* PutNoContentViewController~iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PutNoContentViewController~iPad.xib"; sourceTree = "<group>"; };
+		C512E02212595596003D94BB /* PutNoContentViewController~iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PutNoContentViewController~iPhone.xib"; sourceTree = "<group>"; };
+		C512E05A12596606003D94BB /* GUIFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIFunctions.h; sourceTree = "<group>"; };
+		C512E05B12596606003D94BB /* GUIFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIFunctions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,16 +206,10 @@
 			children = (
 				1D3623240D0F684500981E51 /* ADModelAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ADModelAppDelegate.m */,
-				28AD735F0D9D9599002E5188 /* MainWindow_iPhone.xib */,
-				C512DCF91257A53C003D94BB /* MainWindow_iPad.xib */,
-				C512DD791257BCD6003D94BB /* AbstractSuperClasses */,
-				C512DD771257BC98003D94BB /* Root */,
-				C512DD781257BCBC003D94BB /* Podcast */,
-				C512DDD81257C975003D94BB /* Twitter */,
-				C512DE811257E583003D94BB /* Post */,
 				C512DD3D1257B1CA003D94BB /* Model */,
 				5357B08A123B0AD400B80617 /* Queue */,
 				5357B058123B0AD400B80617 /* Parsers */,
+				C512E05712595B91003D94BB /* User Interface */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -224,6 +237,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C512E05A12596606003D94BB /* GUIFunctions.h */,
+				C512E05B12596606003D94BB /* GUIFunctions.m */,
 				53F906D612497C04007B028C /* UtilityFunctions.h */,
 				53F906D712497C04007B028C /* UtilityFunctions.m */,
 				28A0AAE50D9B0CCF005BE974 /* ADModel_Prefix.pch */,
@@ -400,8 +415,8 @@
 			children = (
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
-				28F335F01007B36200424DE2 /* RootView_iPhone.xib */,
-				C512DCFB1257A54E003D94BB /* RootView_iPad.xib */,
+				28F335F01007B36200424DE2 /* RootView~iPhone.xib */,
+				C512DCFB1257A54E003D94BB /* RootView~iPad.xib */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -466,9 +481,56 @@
 			children = (
 				C512DE841257E5D7003D94BB /* PostFormViewController.h */,
 				C512DE851257E5D7003D94BB /* PostFormViewController.m */,
-				C512DE861257E5D7003D94BB /* PostFormViewController.xib */,
+				C512DE861257E5D7003D94BB /* PostFormViewController~iPhone.xib */,
+				C512DFAD12594C71003D94BB /* PostFormViewController~iPad.xib */,
 			);
 			name = Form;
+			sourceTree = "<group>";
+		};
+		C512DF9D12594A7D003D94BB /* Put */ = {
+			isa = PBXGroup;
+			children = (
+				C512DF9E12594A8A003D94BB /* Create */,
+				C512E01B1259548C003D94BB /* No-Content */,
+			);
+			name = Put;
+			sourceTree = "<group>";
+		};
+		C512DF9E12594A8A003D94BB /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				C512DF9F12594AAB003D94BB /* PutCreateViewController.h */,
+				C512DFA012594AAB003D94BB /* PutCreateViewController.m */,
+				C512DFDE125950B2003D94BB /* PutCreateViewController~iPad.xib */,
+				C512DFDF125950B2003D94BB /* PutCreateViewController~iPhone.xib */,
+			);
+			name = Create;
+			sourceTree = "<group>";
+		};
+		C512E01B1259548C003D94BB /* No-Content */ = {
+			isa = PBXGroup;
+			children = (
+				C512E01C125954A3003D94BB /* PutNoContentViewController.h */,
+				C512E01D125954A3003D94BB /* PutNoContentViewController.m */,
+				C512E02112595596003D94BB /* PutNoContentViewController~iPad.xib */,
+				C512E02212595596003D94BB /* PutNoContentViewController~iPhone.xib */,
+			);
+			name = "No-Content";
+			sourceTree = "<group>";
+		};
+		C512E05712595B91003D94BB /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				28AD735F0D9D9599002E5188 /* MainWindow~iPhone.xib */,
+				C512DCF91257A53C003D94BB /* MainWindow~iPad.xib */,
+				C512DD791257BCD6003D94BB /* AbstractSuperClasses */,
+				C512DD771257BC98003D94BB /* Root */,
+				C512DD781257BCBC003D94BB /* Podcast */,
+				C512DDD81257C975003D94BB /* Twitter */,
+				C512DE811257E583003D94BB /* Post */,
+				C512DF9D12594A7D003D94BB /* Put */,
+			);
+			name = "User Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,8 +583,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD73600D9D9599002E5188 /* MainWindow_iPhone.xib in Resources */,
-				28F335F11007B36200424DE2 /* RootView_iPhone.xib in Resources */,
+				28AD73600D9D9599002E5188 /* MainWindow~iPhone.xib in Resources */,
+				28F335F11007B36200424DE2 /* RootView~iPhone.xib in Resources */,
 				5357B18F123B24B800B80617 /* File.txt in Resources */,
 				5357B227123B30C200B80617 /* Image.jpg in Resources */,
 				C512DCF01257A417003D94BB /* AppIcon.png in Resources */,
@@ -533,9 +595,14 @@
 				C512DCF51257A417003D94BB /* Launch@2x.png in Resources */,
 				C512DCF61257A417003D94BB /* Launch_iPad-Landscape.png in Resources */,
 				C512DCF71257A417003D94BB /* Launch_iPad-Portrait.png in Resources */,
-				C512DCFA1257A53C003D94BB /* MainWindow_iPad.xib in Resources */,
-				C512DCFC1257A54E003D94BB /* RootView_iPad.xib in Resources */,
-				C512DE881257E5D7003D94BB /* PostFormViewController.xib in Resources */,
+				C512DCFA1257A53C003D94BB /* MainWindow~iPad.xib in Resources */,
+				C512DCFC1257A54E003D94BB /* RootView~iPad.xib in Resources */,
+				C512DE881257E5D7003D94BB /* PostFormViewController~iPhone.xib in Resources */,
+				C512DFAE12594C71003D94BB /* PostFormViewController~iPad.xib in Resources */,
+				C512DFE0125950B2003D94BB /* PutCreateViewController~iPad.xib in Resources */,
+				C512DFE1125950B2003D94BB /* PutCreateViewController~iPhone.xib in Resources */,
+				C512E02312595596003D94BB /* PutNoContentViewController~iPad.xib in Resources */,
+				C512E02412595596003D94BB /* PutNoContentViewController~iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +649,9 @@
 				C512DE5D1257DCCC003D94BB /* TwitterUserTableViewController.m in Sources */,
 				C512DE871257E5D7003D94BB /* PostFormViewController.m in Sources */,
 				C512DEFD12580B93003D94BB /* Reachability.m in Sources */,
+				C512DFA212594AAB003D94BB /* PutCreateViewController.m in Sources */,
+				C512E01F125954A3003D94BB /* PutNoContentViewController.m in Sources */,
+				C512E05C12596606003D94BB /* GUIFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -279,10 +279,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 	op.parseType				=	NoParse;
 	op.instanceCode				=	kPutCreateURL;
 	op.URI						=	@"/ESModelAPI/Put/Created/index.php";
-	op.headerDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
-									 @"Header_Value_One", @"Header_Field_One",
-									 @"Header_Value_Two", @"Header_Field_Two", nil];
-	op.bodyDataArray				=	[NSArray arrayWithObject:[@"Put Test String Encoded As Data\n" dataUsingEncoding:NSUTF8StringEncoding]];
+//	op.headerDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
+//									 @"Header_Value_One", @"Header_Field_One",
+//									 @"Header_Value_Two", @"Header_Field_Two", nil];
+	op.bodyDataArray				=	[NSArray arrayWithObject:[@"Put Test String\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	//op.connectionID				=	[self generateConnectionID];
 	if (connected)
 		[operationQueue addOperation:op];
@@ -299,7 +299,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 	op.delegate					=	self;
 	op.requestType				=	PUT;
 	op.parseType				=	NoParse;
-	op.instanceCode				=	kPutCreateURL;
+	op.instanceCode				=	kPutNoContentURL;
 	op.URI						=	@"/ESModelAPI/Put/NoContent/index.php";
 	op.headerDict				=	[NSDictionary dictionaryWithObjectsAndKeys:
 									 @"Header_Value_One", @"Header_Field_One",
@@ -316,7 +316,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 {
 	return [NSString stringWithFormat:@"%f", CFAbsoluteTimeGetCurrent()];
 }
-- (NSString *)logNSURLError:(int)errorCode
+- (NSString *)stringForNSURLError:(int)errorCode
 {
 	switch (errorCode) {
 		case NSURLErrorUnknown:
@@ -550,12 +550,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 		  statusCode,
 		  headers,
 		  value);
-	NSMutableArray	*	dlgts;
+	NSArray		*	dlgts;
+	NSString	*	resultString;
 	switch (operation.instanceCode) {
 		case kPodcastFeedCode:
 			NSParameterAssert([result isKindOfClass:[NSArray class]]);
 			NSParameterAssert(([(NSArray *)result count] > 0));
-			dlgts	=	[[NSMutableArray alloc] initWithArray:delegates];
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
 			for (id delegate in dlgts)
 			{
 				if ([delegate respondsToSelector:@selector(podcastFeed:)])
@@ -571,7 +572,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 			// Also in a real app I would hold onto the refresh url instead of
 			// making new queries each time
 			NSArray	*	results	=	[(NSDictionary *)result objectForKey:@"results"];
-			dlgts	=	[[NSMutableArray alloc] initWithArray:delegates];
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
 			for (id delegate in dlgts)
 			{
 				if ([delegate respondsToSelector:@selector(twitterSearchFeed:)])
@@ -587,7 +588,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 			// Also in a real app I would hold onto the refresh url instead of
 			// making new queries each time
 			// Also in a real I would need to check for users set to priavte (result would be nil)
-			dlgts	=	[[NSMutableArray alloc] initWithArray:delegates];
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
 			for (id delegate in dlgts)
 			{
 				if ([delegate respondsToSelector:@selector(twitterUserFeed:)])
@@ -597,13 +598,47 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 			break;
 		case kPostPrintCode:
 			NSParameterAssert([result isKindOfClass:[NSArray class]]);
-			NSString	*	resultString	=	[NSString stringWithFormat:@"%@", result];
+			resultString	=	[NSString stringWithFormat:@"%@", result];
 			NSParameterAssert((resultString != nil));
-			dlgts	=	[[NSMutableArray alloc] initWithArray:delegates];
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
 			for (id delegate in dlgts)
 			{
 				if ([delegate respondsToSelector:@selector(postPrint:)])
 					[delegate postPrint:resultString];
+			}
+			CleanRelease(dlgts);
+			break;
+		case kPutCreateURL:
+			NSParameterAssert([result isKindOfClass:[NSData class]]);
+			NSParameterAssert(([(NSHTTPURLResponse *)operation.response statusCode] == 201));
+			resultString	=	[[[NSString alloc] initWithData:(NSData *)result encoding:NSUTF8StringEncoding] autorelease];
+			NSParameterAssert((resultString != nil));
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
+			for (id delegate in dlgts)
+			{
+				if ([delegate respondsToSelector:@selector(putCreate:)])
+					[delegate putCreate:resultString];
+			}
+			CleanRelease(dlgts);
+			break;
+		case kPutNoContentURL:
+			NSParameterAssert([result isKindOfClass:[NSData class]]);
+			NSParameterAssert(([(NSData *)result length] == 0));
+			NSInteger			statusCode	=	0;
+			NSDictionary	*	headers		=	nil;
+			if ([operation.response isKindOfClass:[NSHTTPURLResponse class]])
+			{
+				statusCode	=	[(NSHTTPURLResponse *)operation.response statusCode];
+				headers		=	[(NSHTTPURLResponse *)operation.response allHeaderFields];
+			}
+			resultString	=	[NSString stringWithFormat:@"Response Status Code: %d\nHeaders: %@", 
+								 statusCode,
+								 headers];
+			dlgts	=	[[NSArray alloc] initWithArray:delegates];
+			for (id delegate in dlgts)
+			{
+				if ([delegate respondsToSelector:@selector(putNoContent:)])
+					[delegate putNoContent:resultString];
 			}
 			CleanRelease(dlgts);
 			break;
@@ -623,8 +658,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DataModel)
 		  operation.URI,
 		  error,
 		  statusCode,
-		  [self logNSURLError:error.code]);
-	// Report error
+		  [self stringForNSURLError:error.code]);
+	NSArray	*	dlgts	=	[[NSArray alloc] initWithArray:delegates];
+	for (id delegate in dlgts)
+	{
+		if ([delegate respondsToSelector:@selector(error:operationCode:)])
+			[delegate error:error operationCode:operation.instanceCode];
+	}
+	CleanRelease(dlgts);
 }
 /******************************************************************************/
 #pragma mark -

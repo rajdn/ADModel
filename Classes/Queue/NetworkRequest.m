@@ -275,7 +275,7 @@ didReceiveResponse:(NSURLResponse *)response
 {
 	CleanRelease(_response);
 	_response	=	[response copy];
-#if 0
+#if 1
 	if ([[[_request URL] scheme] isEqual:@"http"] ||
 		[[[_request URL] scheme] isEqual:@"https"])
 	{

@@ -58,11 +58,11 @@
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		return YES;
-	else
-		return ((toInterfaceOrientation == UIInterfaceOrientationPortrait) ||
-				(toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown));
+//	else
+//		return ((toInterfaceOrientation == UIInterfaceOrientationPortrait) ||
+//				(toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown));
 }
 /******************************************************************************/
 #pragma mark -
@@ -80,6 +80,14 @@
 	CleanRelease(activityIndicator);
     [super dealloc];
 }
-
+/******************************************************************************/
+#pragma mark -
+#pragma mark Data Model Delegate
+#pragma mark -
+/******************************************************************************/
+- (void)error:(NSError *)error operationCode:(NSInteger)code
+{
+	
+}
 
 @end
