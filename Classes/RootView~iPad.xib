@@ -12,7 +12,6 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -47,6 +46,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 109}, {292, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -83,6 +83,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 183}, {292, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -103,6 +104,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 109}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -123,6 +125,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 257}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -143,6 +146,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 331}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -163,6 +167,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 331}, {292, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -183,6 +188,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{67, 553}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -203,6 +209,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 257}, {292, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -223,6 +230,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 183}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -243,6 +251,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 405}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -263,8 +272,10 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 405}, {292, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<bool key="IBUIEnabled">NO</bool>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="22886721"/>
@@ -283,6 +294,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{67, 479}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIEnabled">NO</bool>
@@ -304,6 +316,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{173, 48}, {79, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -319,6 +332,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{514, 48}, {81, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -334,6 +348,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{67, 627}, {293, 37}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -354,6 +369,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 80}, {292, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -377,6 +393,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 154}, {292, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -393,6 +410,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 228}, {292, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -409,6 +427,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 302}, {292, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -425,6 +444,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 376}, {292, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -441,6 +461,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 450}, {292, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -457,6 +478,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{68, 524}, {292, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -473,6 +495,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{67, 598}, {293, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -489,6 +512,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 80}, {293, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -505,6 +529,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 154}, {293, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -521,6 +546,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 228}, {293, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -537,6 +563,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 302}, {293, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -553,6 +580,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{408, 376}, {293, 21}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -569,6 +597,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{427, 479}, {254, 42}}</string>
 						<reference key="NSSuperview" ref="431191100"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -584,6 +613,7 @@
 				</object>
 				<string key="NSFrameSize">{768, 1004}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
